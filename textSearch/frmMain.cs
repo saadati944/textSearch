@@ -46,6 +46,7 @@ namespace textSearch
             txtDesc.Text = "";
             picIcon.Image = null;
             btnOpenFolder.Enabled = false;
+            lstItems.Items.Clear();
 
             if (btnFind.Text == "Find")
             {
