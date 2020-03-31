@@ -95,6 +95,8 @@ namespace textSearch
 
         public bool checkFile(string p)
         {
+            if (!format.Contains(Path.GetExtension(p)))
+                return false;
             foreach (string x in File.ReadAllLines(p))
             {
                 if (exit)
