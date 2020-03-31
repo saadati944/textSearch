@@ -16,6 +16,7 @@ namespace textSearch
         string[] path;
         string[] format;
         string value;
+        bool caseSnse;
         List<string> desc = new List<string>();
 
         bool exit = false;
@@ -39,11 +40,14 @@ namespace textSearch
             catch { }
             r.Dispose();
         }
-
+        
         private void btnFind_Click(object sender, EventArgs e)
         {
             if (btnFind.Text == "Find")
             {
+                caseSnse = btnFind.BackColor == Color.Green;
+                if (!caseSnse)
+                    value = value.ToLower();
                 exit = false;
                 desc = new List<string>();
                 value = txttext.Text;
@@ -111,8 +115,15 @@ namespace textSearch
             {
                 if (exit)
                     return false;
-                if (x.ToLower().Contains(value))
+
+                if (caseSnse)
+                {
+                    if (x.Contains(value))
+                        return true;
+                }
+                else if(x.ToLower().Contains(value))
                     return true;
+
             }
             return false;
         }
@@ -122,5 +133,23 @@ namespace textSearch
             exit = true;
         }
 
+        private void lstItems_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnMatchCase_Click(object sender, EventArgs e)
+        {
+            if (btnMatchCase.BackColor == Color.Green)
+            {
+                btnMatchCase.BackColor = Color.Red;
+                btnMatchCase.Text = "Match Case";
+            }
+            else
+            {
+                btnMatchCase.BackColor = Color.Green;
+                btnMatchCase.Text = "match case";
+            }
+        }
     }
 }

@@ -35,6 +35,7 @@
             this.pnlDesc = new System.Windows.Forms.Panel();
             this.picIcon = new System.Windows.Forms.PictureBox();
             this.txtDesc = new System.Windows.Forms.TextBox();
+            this.btnMatchCase = new System.Windows.Forms.Button();
             this.pnlTool.SuspendLayout();
             this.pnlDesc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picIcon)).BeginInit();
@@ -54,6 +55,7 @@
             // pnlTool
             // 
             this.pnlTool.Controls.Add(this.txttext);
+            this.pnlTool.Controls.Add(this.btnMatchCase);
             this.pnlTool.Controls.Add(this.btnFind);
             this.pnlTool.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTool.Location = new System.Drawing.Point(0, 0);
@@ -66,7 +68,7 @@
             this.txttext.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txttext.Location = new System.Drawing.Point(0, 0);
             this.txttext.Name = "txttext";
-            this.txttext.Size = new System.Drawing.Size(659, 20);
+            this.txttext.Size = new System.Drawing.Size(584, 20);
             this.txttext.TabIndex = 1;
             // 
             // lstItems
@@ -77,6 +79,7 @@
             this.lstItems.Name = "lstItems";
             this.lstItems.Size = new System.Drawing.Size(800, 286);
             this.lstItems.TabIndex = 2;
+            this.lstItems.SelectedIndexChanged += new System.EventHandler(this.lstItems_SelectedIndexChanged);
             // 
             // pnlDesc
             // 
@@ -105,6 +108,20 @@
             this.txtDesc.Name = "txtDesc";
             this.txtDesc.Size = new System.Drawing.Size(647, 144);
             this.txtDesc.TabIndex = 1;
+            // 
+            // btnMatchCase
+            // 
+            this.btnMatchCase.BackColor = System.Drawing.Color.Red;
+            this.btnMatchCase.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnMatchCase.FlatAppearance.BorderSize = 0;
+            this.btnMatchCase.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnMatchCase.Location = new System.Drawing.Point(584, 0);
+            this.btnMatchCase.Name = "btnMatchCase";
+            this.btnMatchCase.Size = new System.Drawing.Size(75, 20);
+            this.btnMatchCase.TabIndex = 2;
+            this.btnMatchCase.Text = "Match Case";
+            this.btnMatchCase.UseVisualStyleBackColor = false;
+            this.btnMatchCase.Click += new System.EventHandler(this.btnMatchCase_Click);
             // 
             // frmMain
             // 
@@ -135,6 +152,7 @@
         private System.Windows.Forms.Panel pnlDesc;
         private System.Windows.Forms.PictureBox picIcon;
         private System.Windows.Forms.TextBox txtDesc;
+        private System.Windows.Forms.Button btnMatchCase;
     }
 }
 
