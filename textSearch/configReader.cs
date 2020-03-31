@@ -51,7 +51,18 @@ namespace textSearch
                 if (key == "" || value == "")
                     return;
 
-                if(!configs.ContainsKey(key))
+                if (key.StartsWith("+"))
+                {
+                    key = key.Substring(1);
+                    string v = "";
+                    if (configs.ContainsKey(key))
+                    {
+                        v = configs[key];
+                        configs.Remove(key);
+                    }
+                    configs.Add(key, v + value);
+                }
+                else if(!configs.ContainsKey(key))
                 configs.Add(key, value);
             }
             catch { }
