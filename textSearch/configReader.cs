@@ -40,16 +40,21 @@ namespace textSearch
         }
         void setVal(string kandv)
         {
-            string key = kandv.Substring(0, kandv.IndexOf(':'));
-            string value = kandv.Substring(key.Length, kandv.Length - key.Length);
+            try
+            {
+                string key = kandv.Substring(0, kandv.IndexOf(':'));
+                string value = kandv.Substring(key.Length, kandv.Length - key.Length);
 
-            key = cutSpaces(key);
-            value = cutSpaces(value);
+                key = cutSpaces(key);
+                value = cutSpaces(value);
 
-            if (key == "" || value == "")
-                return;
+                if (key == "" || value == "")
+                    return;
 
-            configs.Add(key, value);
+                if(!configs.ContainsKey(key))
+                configs.Add(key, value);
+            }
+            catch { }
         }
         string cutSpaces(string v)
         {
