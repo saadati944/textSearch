@@ -49,10 +49,13 @@ namespace textSearch
                 value = txttext.Text;
                 Task.Run(find);
                 txttext.Enabled = false;
-                btnFind.Text = "Stop"; }
+                btnFind.Text = "Stop";
+            }
             else
             {
                 exit = true;
+                System.Threading.Thread.Sleep(500);
+
             }
         }
         public void addFileToList(string fpath)
@@ -64,7 +67,6 @@ namespace textSearch
         {
             try
             {
-
                 for (int i = 0; i < path.Length; i++)
                 {
                     if (exit)
@@ -78,19 +80,27 @@ namespace textSearch
 
         public void dirExplorer(string dpath)
         {
-            foreach (string x in Directory.GetFiles(dpath))
+            try
             {
-                if (exit)
-                    return;
-                if (checkFile(x))
-                    addFileToList(x);
+                foreach (string x in Directory.GetFiles(dpath))
+                {
+                    if (exit)
+                        return;
+                    if (checkFile(x))
+                        addFileToList(x);
+                }
             }
-            foreach (string x in Directory.GetDirectories(dpath))
+            catch { }
+            try
             {
-                if (exit)
-                    return;
-                dirExplorer(x);
+                foreach (string x in Directory.GetDirectories(dpath))
+                {
+                    if (exit)
+                        return;
+                    dirExplorer(x);
+                }
             }
+            catch { }
         }
 
         public bool checkFile(string p)
