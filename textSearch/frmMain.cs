@@ -78,7 +78,7 @@ namespace textSearch
         {
             try
             {
-                for (int i = 0; i < path.Length; i++)
+                for (int j = 0; j < path.Length; j++)
                 {
                     if (exit)
                     {
@@ -86,7 +86,12 @@ namespace textSearch
                         return;
                     }
                     tasks+=1;
-                    Task.Run(new Action(()=> dirExplorer(path[i])));
+                    try
+                    {
+                        string tstr = path[j];
+                        Task.Run(new Action(() => dirExplorer(tstr,true)));
+                    }
+                    catch { tasks -= 1; }
                 }
                 if (exit)
                 {
@@ -97,20 +102,21 @@ namespace textSearch
                     System.Threading.Thread.Sleep(10);
             }
             catch { }
-            btnFind.Text = "Find";
-            txttext.Enabled = true;
+            this.Invoke(new Action(()=> btnFind.Text = "Find"));
+            this.Invoke(new Action(()=> txttext.Enabled = true));
             MessageBox.Show("end");
         }
 
-        public void dirExplorer(string dpath)
+        public void dirExplorer(string dpath,bool root=false)
         {
+            
             try
             {
                 foreach (string x in Directory.GetFiles(dpath))
                 {
                     if (exit)
                     {
-                        tasks -= 1;
+                        if(root)tasks -= 1;
                         return;
                     }
                     if (checkFile(x))
@@ -124,14 +130,14 @@ namespace textSearch
                 {
                     if (exit)
                     {
-                        tasks -= 1;
+                        if(root)tasks -= 1;
                         return;
                     }
                     dirExplorer(x);
                 }
             }
             catch { }
-            tasks -= 1;
+            if(root)tasks -= 1;
         }
 
         public bool checkFile(string p)
