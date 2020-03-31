@@ -15,6 +15,8 @@ namespace textSearch
         public frmMain()
         {
             InitializeComponent();
+
         }
+
     }
 }

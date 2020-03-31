@@ -25,10 +25,10 @@ namespace textSearch
                 if (x.StartsWith("//"))
                     continue;
                 if (x.StartsWith("/*"))
-                    comment = !comment;
+                    comment = true;
                 if (x.EndsWith("*/"))
                 {
-                    comment = !comment;
+                    comment = false;
                     continue;
                 }
                 if (comment)
