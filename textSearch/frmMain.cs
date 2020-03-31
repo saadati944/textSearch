@@ -52,6 +52,11 @@ namespace textSearch
             }
         }
 
+        public void dirExplorer(string dpath)
+        {
+
+        }
+
         public bool checkFile(string path)
         {
             foreach (string x in File.ReadAllLines(path))
