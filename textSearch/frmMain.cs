@@ -62,6 +62,7 @@ namespace textSearch
             }
             else
             {
+                txttext.Enabled = true;
                 exit = true;
                 System.Threading.Thread.Sleep(500);
 
