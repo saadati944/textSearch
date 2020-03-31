@@ -16,5 +16,10 @@ namespace textSearch
         {
             InitializeComponent();
         }
+
+        private void btnFind_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
