@@ -34,6 +34,7 @@
             this.lstItems = new System.Windows.Forms.ListBox();
             this.pnlDesc = new System.Windows.Forms.Panel();
             this.picIcon = new System.Windows.Forms.PictureBox();
+            this.txtDesc = new System.Windows.Forms.TextBox();
             this.pnlTool.SuspendLayout();
             this.pnlDesc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picIcon)).BeginInit();
@@ -79,6 +80,7 @@
             // 
             // pnlDesc
             // 
+            this.pnlDesc.Controls.Add(this.txtDesc);
             this.pnlDesc.Controls.Add(this.picIcon);
             this.pnlDesc.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlDesc.Location = new System.Drawing.Point(0, 306);
@@ -95,6 +97,15 @@
             this.picIcon.TabIndex = 0;
             this.picIcon.TabStop = false;
             // 
+            // txtDesc
+            // 
+            this.txtDesc.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtDesc.Location = new System.Drawing.Point(153, 0);
+            this.txtDesc.Multiline = true;
+            this.txtDesc.Name = "txtDesc";
+            this.txtDesc.Size = new System.Drawing.Size(647, 144);
+            this.txtDesc.TabIndex = 1;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -109,6 +120,7 @@
             this.pnlTool.ResumeLayout(false);
             this.pnlTool.PerformLayout();
             this.pnlDesc.ResumeLayout(false);
+            this.pnlDesc.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picIcon)).EndInit();
             this.ResumeLayout(false);
 
@@ -122,6 +134,7 @@
         private System.Windows.Forms.ListBox lstItems;
         private System.Windows.Forms.Panel pnlDesc;
         private System.Windows.Forms.PictureBox picIcon;
+        private System.Windows.Forms.TextBox txtDesc;
     }
 }
 
