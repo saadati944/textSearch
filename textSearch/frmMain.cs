@@ -33,12 +33,15 @@ namespace textSearch
         }
         string[] path;
         string[] format;
+        string value;
         bool exit = false;
 
         private void btnFind_Click(object sender, EventArgs e)
         {
+            value = txttext.Text;
             Task.Run(find);
-            pnlTool.Enabled = lstItems.Enabled = false;
+            txttext.Enabled = lstItems.Enabled = false;
+            btnFind.Text = "Stop";
         }
 
         void find()
@@ -49,6 +52,13 @@ namespace textSearch
             }
         }
 
+        public bool checkFile(string path)
+        {
+            foreach (string x in File.ReadAllLines(path))
+                if (x.ToLower().Contains(value))
+                    return true;
+            return false;
+        }
 
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
         {
