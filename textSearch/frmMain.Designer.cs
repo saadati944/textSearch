@@ -31,12 +31,12 @@
             this.btnFind = new System.Windows.Forms.Button();
             this.pnlTool = new System.Windows.Forms.Panel();
             this.txttext = new System.Windows.Forms.TextBox();
+            this.btnMatchCase = new System.Windows.Forms.Button();
             this.lstItems = new System.Windows.Forms.ListBox();
             this.pnlDesc = new System.Windows.Forms.Panel();
-            this.picIcon = new System.Windows.Forms.PictureBox();
             this.txtDesc = new System.Windows.Forms.TextBox();
-            this.btnMatchCase = new System.Windows.Forms.Button();
             this.btnOpenFolder = new System.Windows.Forms.Button();
+            this.picIcon = new System.Windows.Forms.PictureBox();
             this.pnlTool.SuspendLayout();
             this.pnlDesc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picIcon)).BeginInit();
@@ -72,6 +72,20 @@
             this.txttext.Size = new System.Drawing.Size(584, 20);
             this.txttext.TabIndex = 1;
             // 
+            // btnMatchCase
+            // 
+            this.btnMatchCase.BackColor = System.Drawing.Color.Red;
+            this.btnMatchCase.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnMatchCase.FlatAppearance.BorderSize = 0;
+            this.btnMatchCase.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnMatchCase.Location = new System.Drawing.Point(584, 0);
+            this.btnMatchCase.Name = "btnMatchCase";
+            this.btnMatchCase.Size = new System.Drawing.Size(75, 20);
+            this.btnMatchCase.TabIndex = 2;
+            this.btnMatchCase.Text = "Match Case";
+            this.btnMatchCase.UseVisualStyleBackColor = false;
+            this.btnMatchCase.Click += new System.EventHandler(this.btnMatchCase_Click);
+            // 
             // lstItems
             // 
             this.lstItems.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -79,6 +93,7 @@
             this.lstItems.Location = new System.Drawing.Point(0, 20);
             this.lstItems.Name = "lstItems";
             this.lstItems.Size = new System.Drawing.Size(800, 286);
+            this.lstItems.Sorted = true;
             this.lstItems.TabIndex = 2;
             this.lstItems.SelectedIndexChanged += new System.EventHandler(this.lstItems_SelectedIndexChanged);
             this.lstItems.DoubleClick += new System.EventHandler(this.lstItems_DoubleClick);
@@ -94,16 +109,6 @@
             this.pnlDesc.Size = new System.Drawing.Size(800, 144);
             this.pnlDesc.TabIndex = 3;
             // 
-            // picIcon
-            // 
-            this.picIcon.Dock = System.Windows.Forms.DockStyle.Left;
-            this.picIcon.Location = new System.Drawing.Point(0, 0);
-            this.picIcon.Name = "picIcon";
-            this.picIcon.Size = new System.Drawing.Size(144, 144);
-            this.picIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picIcon.TabIndex = 0;
-            this.picIcon.TabStop = false;
-            // 
             // txtDesc
             // 
             this.txtDesc.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -112,20 +117,6 @@
             this.txtDesc.Name = "txtDesc";
             this.txtDesc.Size = new System.Drawing.Size(656, 121);
             this.txtDesc.TabIndex = 1;
-            // 
-            // btnMatchCase
-            // 
-            this.btnMatchCase.BackColor = System.Drawing.Color.Red;
-            this.btnMatchCase.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnMatchCase.FlatAppearance.BorderSize = 0;
-            this.btnMatchCase.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnMatchCase.Location = new System.Drawing.Point(584, 0);
-            this.btnMatchCase.Name = "btnMatchCase";
-            this.btnMatchCase.Size = new System.Drawing.Size(75, 20);
-            this.btnMatchCase.TabIndex = 2;
-            this.btnMatchCase.Text = "Match Case";
-            this.btnMatchCase.UseVisualStyleBackColor = false;
-            this.btnMatchCase.Click += new System.EventHandler(this.btnMatchCase_Click);
             // 
             // btnOpenFolder
             // 
@@ -137,6 +128,16 @@
             this.btnOpenFolder.Text = "Open Folder";
             this.btnOpenFolder.UseVisualStyleBackColor = true;
             this.btnOpenFolder.Click += new System.EventHandler(this.btnOpenFolder_Click);
+            // 
+            // picIcon
+            // 
+            this.picIcon.Dock = System.Windows.Forms.DockStyle.Left;
+            this.picIcon.Location = new System.Drawing.Point(0, 0);
+            this.picIcon.Name = "picIcon";
+            this.picIcon.Size = new System.Drawing.Size(144, 144);
+            this.picIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picIcon.TabIndex = 0;
+            this.picIcon.TabStop = false;
             // 
             // frmMain
             // 

@@ -16,7 +16,7 @@ namespace textSearch
         string[] path;
         string[] format;
         string value;
-        bool caseSnse;
+        volatile bool caseSnse;
         int tasks = 0;
         List<string> desc = new List<string>();
 
@@ -26,6 +26,7 @@ namespace textSearch
         public frmMain()
         {
             InitializeComponent();
+
             configReader r = new configReader(Application.StartupPath + "\\textsearch.config");
             r.readFile();
             try
@@ -199,11 +200,13 @@ namespace textSearch
             {
                 btnMatchCase.BackColor = Color.Red;
                 btnMatchCase.Text = "Match Case";
+                caseSnse = false;
             }
             else
             {
                 btnMatchCase.BackColor = Color.Green;
                 btnMatchCase.Text = "match case";
+                caseSnse = true;
             }
         }
 
