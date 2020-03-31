@@ -43,6 +43,8 @@ namespace textSearch
         
         private void btnFind_Click(object sender, EventArgs e)
         {
+            txtDesc.Text = "";
+            picIcon.Image = null;
             if (btnFind.Text == "Find")
             {
                 caseSnse = btnFind.BackColor == Color.Green;
@@ -135,7 +137,23 @@ namespace textSearch
 
         private void lstItems_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            if (lstItems.SelectedIndex == -1)
+                return;
+            try
+            {
+                picIcon.Image = Icon.ExtractAssociatedIcon(desc[lstItems.SelectedIndex]).ToBitmap();
+            }
+            catch { }
+            try
+            {
+                FileInfo fi = new FileInfo(desc[lstItems.SelectedIndex]);
+                txtDesc.Text = fi.FullName;
+                txtDesc.Text += "\r\n\r\nfile size : " + (fi.Length / 1024).ToString() + " KB";
+                txtDesc.Text += "\r\ncreation time : " + fi.CreationTime.ToLongDateString()+"  -  "+ fi.CreationTime.ToLongTimeString();
+                txtDesc.Text += "\r\nlast write time : " + fi.LastWriteTime.ToLongDateString() + "  -  " + fi.LastWriteTime.ToLongTimeString();
+                txtDesc.Text += "\r\nlast access time : " + fi.LastAccessTime.ToLongDateString() + "  -  " + fi.LastAccessTime.ToLongTimeString();
+            }
+            catch { }
         }
 
         private void btnMatchCase_Click(object sender, EventArgs e)
