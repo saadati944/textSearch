@@ -32,6 +32,7 @@
             this.pnlTool = new System.Windows.Forms.Panel();
             this.txttext = new System.Windows.Forms.TextBox();
             this.lstItems = new System.Windows.Forms.ListBox();
+            this.pnlDesc = new System.Windows.Forms.Panel();
             this.pnlTool.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,8 +71,16 @@
             this.lstItems.FormattingEnabled = true;
             this.lstItems.Location = new System.Drawing.Point(0, 20);
             this.lstItems.Name = "lstItems";
-            this.lstItems.Size = new System.Drawing.Size(800, 430);
+            this.lstItems.Size = new System.Drawing.Size(800, 286);
             this.lstItems.TabIndex = 2;
+            // 
+            // pnlDesc
+            // 
+            this.pnlDesc.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlDesc.Location = new System.Drawing.Point(0, 306);
+            this.pnlDesc.Name = "pnlDesc";
+            this.pnlDesc.Size = new System.Drawing.Size(800, 144);
+            this.pnlDesc.TabIndex = 3;
             // 
             // frmMain
             // 
@@ -79,6 +88,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.lstItems);
+            this.Controls.Add(this.pnlDesc);
             this.Controls.Add(this.pnlTool);
             this.Name = "frmMain";
             this.Text = "TEXT finder";
@@ -95,6 +105,7 @@
         private System.Windows.Forms.Panel pnlTool;
         private System.Windows.Forms.TextBox txttext;
         private System.Windows.Forms.ListBox lstItems;
+        private System.Windows.Forms.Panel pnlDesc;
     }
 }
 
