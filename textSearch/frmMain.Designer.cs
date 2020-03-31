@@ -40,7 +40,7 @@
             this.btnFind.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnFind.Location = new System.Drawing.Point(659, 0);
             this.btnFind.Name = "btnFind";
-            this.btnFind.Size = new System.Drawing.Size(141, 23);
+            this.btnFind.Size = new System.Drawing.Size(141, 20);
             this.btnFind.TabIndex = 0;
             this.btnFind.Text = "Find";
             this.btnFind.UseVisualStyleBackColor = true;
@@ -53,7 +53,7 @@
             this.pnlTool.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTool.Location = new System.Drawing.Point(0, 0);
             this.pnlTool.Name = "pnlTool";
-            this.pnlTool.Size = new System.Drawing.Size(800, 23);
+            this.pnlTool.Size = new System.Drawing.Size(800, 20);
             this.pnlTool.TabIndex = 1;
             // 
             // txttext
@@ -68,9 +68,9 @@
             // 
             this.lstItems.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lstItems.FormattingEnabled = true;
-            this.lstItems.Location = new System.Drawing.Point(0, 23);
+            this.lstItems.Location = new System.Drawing.Point(0, 20);
             this.lstItems.Name = "lstItems";
-            this.lstItems.Size = new System.Drawing.Size(800, 427);
+            this.lstItems.Size = new System.Drawing.Size(800, 430);
             this.lstItems.TabIndex = 2;
             // 
             // frmMain
@@ -82,6 +82,7 @@
             this.Controls.Add(this.pnlTool);
             this.Name = "frmMain";
             this.Text = "TEXT finder";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
             this.pnlTool.ResumeLayout(false);
             this.pnlTool.PerformLayout();
             this.ResumeLayout(false);
