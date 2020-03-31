@@ -15,14 +15,6 @@ namespace textSearch
         public Form1()
         {
             InitializeComponent();
-
-            configReader reader = new configReader(Application.StartupPath + "\\textsearch.config");
-            reader.readFile();
-
-            foreach (var x in reader.configs)
-            {
-                MessageBox.Show(";"+x.Key + ":" + x.Value + ";");
-            }
         }
     }
 }
