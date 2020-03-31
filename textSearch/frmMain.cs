@@ -65,7 +65,7 @@ namespace textSearch
                 txttext.Enabled = true;
                 exit = true;
                 System.Threading.Thread.Sleep(500);
-
+                btnFind.Text = "Find";
             }
         }
         public void addFileToList(string fpath)
@@ -85,6 +85,11 @@ namespace textSearch
                         return;
                     }
                     dirExplorer(path[i]);
+                }
+                if (exit)
+                {
+                    MessageBox.Show("end");
+                    return;
                 }
             }
             catch { }
