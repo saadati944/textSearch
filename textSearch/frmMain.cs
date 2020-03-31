@@ -169,5 +169,10 @@ namespace textSearch
                 btnMatchCase.Text = "match case";
             }
         }
+
+        private void lstItems_DoubleClick(object sender, EventArgs e)
+        {
+
+        }
     }
 }

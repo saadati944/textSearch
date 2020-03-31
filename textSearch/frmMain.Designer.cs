@@ -36,6 +36,7 @@
             this.picIcon = new System.Windows.Forms.PictureBox();
             this.txtDesc = new System.Windows.Forms.TextBox();
             this.btnMatchCase = new System.Windows.Forms.Button();
+            this.btnOpenFolder = new System.Windows.Forms.Button();
             this.pnlTool.SuspendLayout();
             this.pnlDesc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picIcon)).BeginInit();
@@ -80,10 +81,12 @@
             this.lstItems.Size = new System.Drawing.Size(800, 286);
             this.lstItems.TabIndex = 2;
             this.lstItems.SelectedIndexChanged += new System.EventHandler(this.lstItems_SelectedIndexChanged);
+            this.lstItems.DoubleClick += new System.EventHandler(this.lstItems_DoubleClick);
             // 
             // pnlDesc
             // 
             this.pnlDesc.Controls.Add(this.txtDesc);
+            this.pnlDesc.Controls.Add(this.btnOpenFolder);
             this.pnlDesc.Controls.Add(this.picIcon);
             this.pnlDesc.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlDesc.Location = new System.Drawing.Point(0, 306);
@@ -106,7 +109,7 @@
             this.txtDesc.Location = new System.Drawing.Point(153, 0);
             this.txtDesc.Multiline = true;
             this.txtDesc.Name = "txtDesc";
-            this.txtDesc.Size = new System.Drawing.Size(647, 144);
+            this.txtDesc.Size = new System.Drawing.Size(647, 121);
             this.txtDesc.TabIndex = 1;
             // 
             // btnMatchCase
@@ -122,6 +125,16 @@
             this.btnMatchCase.Text = "Match Case";
             this.btnMatchCase.UseVisualStyleBackColor = false;
             this.btnMatchCase.Click += new System.EventHandler(this.btnMatchCase_Click);
+            // 
+            // btnOpenFolder
+            // 
+            this.btnOpenFolder.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnOpenFolder.Location = new System.Drawing.Point(153, 121);
+            this.btnOpenFolder.Name = "btnOpenFolder";
+            this.btnOpenFolder.Size = new System.Drawing.Size(647, 23);
+            this.btnOpenFolder.TabIndex = 2;
+            this.btnOpenFolder.Text = "Open Folder";
+            this.btnOpenFolder.UseVisualStyleBackColor = true;
             // 
             // frmMain
             // 
@@ -153,6 +166,7 @@
         private System.Windows.Forms.PictureBox picIcon;
         private System.Windows.Forms.TextBox txtDesc;
         private System.Windows.Forms.Button btnMatchCase;
+        private System.Windows.Forms.Button btnOpenFolder;
     }
 }
 
