@@ -80,13 +80,17 @@ namespace textSearch
                 for (int i = 0; i < path.Length; i++)
                 {
                     if (exit)
+                    {
+                        MessageBox.Show("end");
                         return;
+                    }
                     dirExplorer(path[i]);
                 }
             }
             catch { }
             btnFind.Text = "Find";
             txttext.Enabled = true;
+            MessageBox.Show("end");
         }
 
         public void dirExplorer(string dpath)
@@ -183,7 +187,12 @@ namespace textSearch
 
         private void lstItems_DoubleClick(object sender, EventArgs e)
         {
-
+            try
+            {
+                if (lstItems.SelectedIndex != -1)
+                    System.Diagnostics.Process.Start(desc[lstItems.SelectedIndex]);
+            }
+            catch { }
         }
 
         private void btnOpenFolder_Click(object sender, EventArgs e)
