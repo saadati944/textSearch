@@ -45,6 +45,8 @@ namespace textSearch
         {
             txtDesc.Text = "";
             picIcon.Image = null;
+            btnOpenFolder.Enabled = false;
+
             if (btnFind.Text == "Find")
             {
                 caseSnse = btnFind.BackColor == Color.Green;
@@ -138,7 +140,13 @@ namespace textSearch
         private void lstItems_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (lstItems.SelectedIndex == -1)
+            {
+                txtDesc.Text = "";
+                picIcon.Image = null;
+                btnOpenFolder.Enabled = false;
                 return;
+            }
+            btnOpenFolder.Enabled = true;
             try
             {
                 picIcon.Image = Icon.ExtractAssociatedIcon(desc[lstItems.SelectedIndex]).ToBitmap();
@@ -173,6 +181,15 @@ namespace textSearch
         private void lstItems_DoubleClick(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnOpenFolder_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start(Path.GetFullPath(desc[lstItems.SelectedIndex]));
+            }
+            catch { }
         }
     }
 }

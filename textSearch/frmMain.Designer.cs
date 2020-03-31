@@ -135,6 +135,7 @@
             this.btnOpenFolder.TabIndex = 2;
             this.btnOpenFolder.Text = "Open Folder";
             this.btnOpenFolder.UseVisualStyleBackColor = true;
+            this.btnOpenFolder.Click += new System.EventHandler(this.btnOpenFolder_Click);
             // 
             // frmMain
             // 
