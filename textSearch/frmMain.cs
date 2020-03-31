@@ -48,11 +48,11 @@ namespace textSearch
                 desc = new List<string>();
                 value = txttext.Text;
                 Task.Run(find);
-                txttext.Enabled = lstItems.Enabled = false;
+                txttext.Enabled = false;
                 btnFind.Text = "Stop"; }
             else
             {
-
+                exit = true;
             }
         }
         public void addFileToList(string fpath)
