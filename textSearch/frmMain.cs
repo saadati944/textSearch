@@ -34,6 +34,8 @@ namespace textSearch
         string[] path;
         string[] format;
         string value;
+        List<string> desc = new List<string>();
+
         bool exit = false;
 
         private void btnFind_Click(object sender, EventArgs e)
@@ -43,7 +45,11 @@ namespace textSearch
             txttext.Enabled = lstItems.Enabled = false;
             btnFind.Text = "Stop";
         }
-
+        public void addFileToList(string fpath)
+        {
+            this.Invoke(new Action(() => lstItems.Items.Add(Path.GetFileName(fpath)));
+            desc.Add(fpath);
+        }
         void find()
         {
             for(int i = 0; i < path.Length; i++)
@@ -54,12 +60,19 @@ namespace textSearch
 
         public void dirExplorer(string dpath)
         {
+            foreach(string x in Directory.GetFiles(dpath))
+            {
 
+            }
+            foreach(string x in Directory.GetDirectories(dpath))
+            {
+
+            }
         }
 
-        public bool checkFile(string path)
+        public bool checkFile(string p)
         {
-            foreach (string x in File.ReadAllLines(path))
+            foreach (string x in File.ReadAllLines(p))
                 if (x.ToLower().Contains(value))
                     return true;
             return false;
