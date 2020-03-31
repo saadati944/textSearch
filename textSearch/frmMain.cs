@@ -13,6 +13,14 @@ namespace textSearch
 {
     public partial class frmMain : Form
     {
+        string[] path;
+        string[] format;
+        string value;
+        List<string> desc = new List<string>();
+
+        bool exit = false;
+
+
         public frmMain()
         {
             InitializeComponent();
@@ -31,50 +39,69 @@ namespace textSearch
             catch { }
             r.Dispose();
         }
-        string[] path;
-        string[] format;
-        string value;
-        List<string> desc = new List<string>();
-
-        bool exit = false;
 
         private void btnFind_Click(object sender, EventArgs e)
         {
-            value = txttext.Text;
-            Task.Run(find);
-            txttext.Enabled = lstItems.Enabled = false;
-            btnFind.Text = "Stop";
+            if (btnFind.Text == "Find")
+            {
+                exit = false;
+                desc = new List<string>();
+                value = txttext.Text;
+                Task.Run(find);
+                txttext.Enabled = lstItems.Enabled = false;
+                btnFind.Text = "Stop"; }
+            else
+            {
+
+            }
         }
         public void addFileToList(string fpath)
         {
-            this.Invoke(new Action(() => lstItems.Items.Add(Path.GetFileName(fpath)));
+            this.Invoke(new Action(() => lstItems.Items.Add(Path.GetFileName(fpath))));
             desc.Add(fpath);
         }
         void find()
         {
-            for(int i = 0; i < path.Length; i++)
+            try
             {
 
+                for (int i = 0; i < path.Length; i++)
+                {
+                    if (exit)
+                        return;
+                    dirExplorer(path[i]);
+                }
             }
+            catch { }
+            btnFind.Text = "Find";
         }
 
         public void dirExplorer(string dpath)
         {
-            foreach(string x in Directory.GetFiles(dpath))
+            foreach (string x in Directory.GetFiles(dpath))
             {
-
+                if (exit)
+                    return;
+                if (checkFile(x))
+                    addFileToList(x);
             }
-            foreach(string x in Directory.GetDirectories(dpath))
+            foreach (string x in Directory.GetDirectories(dpath))
             {
-
+                if (exit)
+                    return;
+                dirExplorer(x);
             }
         }
 
         public bool checkFile(string p)
         {
             foreach (string x in File.ReadAllLines(p))
+            {
+                if (exit)
+                    return false;
                 if (x.ToLower().Contains(value))
                     return true;
+            }
             return false;
         }
 
