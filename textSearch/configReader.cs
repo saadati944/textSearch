@@ -43,7 +43,7 @@ namespace textSearch
             try
             {
                 string key = kandv.Substring(0, kandv.IndexOf(':'));
-                string value = kandv.Substring(key.Length, kandv.Length - key.Length);
+                string value = kandv.Substring(key.Length+1, kandv.Length - key.Length-1);
 
                 key = cutSpaces(key);
                 value = cutSpaces(value);
