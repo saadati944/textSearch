@@ -51,11 +51,11 @@ namespace textSearch
             if (btnFind.Text == "Find")
             {
                 caseSnse = btnFind.BackColor == Color.Green;
-                if (!caseSnse)
-                    value = value.ToLower();
                 exit = false;
                 desc = new List<string>();
                 value = txttext.Text;
+                if (!caseSnse)
+                    value = value.ToLower();
                 Task.Run(find);
                 txttext.Enabled = false;
                 btnFind.Text = "Stop";
@@ -188,7 +188,7 @@ namespace textSearch
         {
             try
             {
-                System.Diagnostics.Process.Start(Path.GetFullPath(desc[lstItems.SelectedIndex]));
+                System.Diagnostics.Process.Start(desc[lstItems.SelectedIndex].Substring(0, desc[lstItems.SelectedIndex].Length-Path.GetFileName(desc[lstItems.SelectedIndex]).Length));
             }
             catch { }
         }

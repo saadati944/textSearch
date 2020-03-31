@@ -99,17 +99,18 @@
             this.picIcon.Dock = System.Windows.Forms.DockStyle.Left;
             this.picIcon.Location = new System.Drawing.Point(0, 0);
             this.picIcon.Name = "picIcon";
-            this.picIcon.Size = new System.Drawing.Size(153, 144);
+            this.picIcon.Size = new System.Drawing.Size(144, 144);
+            this.picIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picIcon.TabIndex = 0;
             this.picIcon.TabStop = false;
             // 
             // txtDesc
             // 
             this.txtDesc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtDesc.Location = new System.Drawing.Point(153, 0);
+            this.txtDesc.Location = new System.Drawing.Point(144, 0);
             this.txtDesc.Multiline = true;
             this.txtDesc.Name = "txtDesc";
-            this.txtDesc.Size = new System.Drawing.Size(647, 121);
+            this.txtDesc.Size = new System.Drawing.Size(656, 121);
             this.txtDesc.TabIndex = 1;
             // 
             // btnMatchCase
@@ -129,9 +130,9 @@
             // btnOpenFolder
             // 
             this.btnOpenFolder.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnOpenFolder.Location = new System.Drawing.Point(153, 121);
+            this.btnOpenFolder.Location = new System.Drawing.Point(144, 121);
             this.btnOpenFolder.Name = "btnOpenFolder";
-            this.btnOpenFolder.Size = new System.Drawing.Size(647, 23);
+            this.btnOpenFolder.Size = new System.Drawing.Size(656, 23);
             this.btnOpenFolder.TabIndex = 2;
             this.btnOpenFolder.Text = "Open Folder";
             this.btnOpenFolder.UseVisualStyleBackColor = true;
