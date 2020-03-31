@@ -86,6 +86,7 @@ namespace textSearch
             }
             catch { }
             btnFind.Text = "Find";
+            txttext.Enabled = true;
         }
 
         public void dirExplorer(string dpath)
