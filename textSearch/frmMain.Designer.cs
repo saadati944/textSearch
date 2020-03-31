@@ -33,7 +33,10 @@
             this.txttext = new System.Windows.Forms.TextBox();
             this.lstItems = new System.Windows.Forms.ListBox();
             this.pnlDesc = new System.Windows.Forms.Panel();
+            this.picIcon = new System.Windows.Forms.PictureBox();
             this.pnlTool.SuspendLayout();
+            this.pnlDesc.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picIcon)).BeginInit();
             this.SuspendLayout();
             // 
             // btnFind
@@ -76,11 +79,21 @@
             // 
             // pnlDesc
             // 
+            this.pnlDesc.Controls.Add(this.picIcon);
             this.pnlDesc.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlDesc.Location = new System.Drawing.Point(0, 306);
             this.pnlDesc.Name = "pnlDesc";
             this.pnlDesc.Size = new System.Drawing.Size(800, 144);
             this.pnlDesc.TabIndex = 3;
+            // 
+            // picIcon
+            // 
+            this.picIcon.Dock = System.Windows.Forms.DockStyle.Left;
+            this.picIcon.Location = new System.Drawing.Point(0, 0);
+            this.picIcon.Name = "picIcon";
+            this.picIcon.Size = new System.Drawing.Size(153, 144);
+            this.picIcon.TabIndex = 0;
+            this.picIcon.TabStop = false;
             // 
             // frmMain
             // 
@@ -95,6 +108,8 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
             this.pnlTool.ResumeLayout(false);
             this.pnlTool.PerformLayout();
+            this.pnlDesc.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picIcon)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -106,6 +121,7 @@
         private System.Windows.Forms.TextBox txttext;
         private System.Windows.Forms.ListBox lstItems;
         private System.Windows.Forms.Panel pnlDesc;
+        private System.Windows.Forms.PictureBox picIcon;
     }
 }
 
