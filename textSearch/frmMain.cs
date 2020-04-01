@@ -1,13 +1,13 @@
 ﻿using System;
 using System.IO;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Drawing;
 using System.Windows.Forms;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+//using System.Data;
+//using System.Text;
+//using System.ComponentModel;
 
 namespace textSearch
 {
@@ -83,7 +83,7 @@ namespace textSearch
                 {
                     if (exit)
                     {
-                        MessageBox.Show("end");
+                        Invoke(new Action(()=> MessageBox.Show("end")));
                         return;
                     }
                     tasks+=1;
@@ -96,7 +96,7 @@ namespace textSearch
                 }
                 if (exit)
                 {
-                    MessageBox.Show("end");
+                    Invoke(new Action(() => MessageBox.Show("end")));
                     return;
                 }
                 while (tasks > 0)
@@ -105,7 +105,7 @@ namespace textSearch
             catch { }
             this.Invoke(new Action(()=> btnFind.Text = "Find"));
             this.Invoke(new Action(()=> txttext.Enabled = true));
-            MessageBox.Show("end");
+            Invoke(new Action(() => MessageBox.Show("end")));
         }
 
         public void dirExplorer(string dpath,bool root=false)
