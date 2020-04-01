@@ -48,7 +48,7 @@
             this.btnFind.Location = new System.Drawing.Point(659, 0);
             this.btnFind.Name = "btnFind";
             this.btnFind.Size = new System.Drawing.Size(141, 20);
-            this.btnFind.TabIndex = 0;
+            this.btnFind.TabIndex = 2;
             this.btnFind.Text = "Find";
             this.btnFind.UseVisualStyleBackColor = true;
             this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
@@ -62,7 +62,7 @@
             this.pnlTool.Location = new System.Drawing.Point(0, 0);
             this.pnlTool.Name = "pnlTool";
             this.pnlTool.Size = new System.Drawing.Size(800, 20);
-            this.pnlTool.TabIndex = 1;
+            this.pnlTool.TabIndex = 0;
             // 
             // txttext
             // 
@@ -70,7 +70,7 @@
             this.txttext.Location = new System.Drawing.Point(0, 0);
             this.txttext.Name = "txttext";
             this.txttext.Size = new System.Drawing.Size(584, 20);
-            this.txttext.TabIndex = 1;
+            this.txttext.TabIndex = 0;
             // 
             // btnMatchCase
             // 
@@ -81,7 +81,7 @@
             this.btnMatchCase.Location = new System.Drawing.Point(584, 0);
             this.btnMatchCase.Name = "btnMatchCase";
             this.btnMatchCase.Size = new System.Drawing.Size(75, 20);
-            this.btnMatchCase.TabIndex = 2;
+            this.btnMatchCase.TabIndex = 1;
             this.btnMatchCase.Text = "Match Case";
             this.btnMatchCase.UseVisualStyleBackColor = false;
             this.btnMatchCase.Click += new System.EventHandler(this.btnMatchCase_Click);
@@ -93,8 +93,7 @@
             this.lstItems.Location = new System.Drawing.Point(0, 20);
             this.lstItems.Name = "lstItems";
             this.lstItems.Size = new System.Drawing.Size(800, 286);
-            this.lstItems.Sorted = true;
-            this.lstItems.TabIndex = 2;
+            this.lstItems.TabIndex = 1;
             this.lstItems.SelectedIndexChanged += new System.EventHandler(this.lstItems_SelectedIndexChanged);
             this.lstItems.DoubleClick += new System.EventHandler(this.lstItems_DoubleClick);
             // 
@@ -124,7 +123,7 @@
             this.btnOpenFolder.Location = new System.Drawing.Point(144, 121);
             this.btnOpenFolder.Name = "btnOpenFolder";
             this.btnOpenFolder.Size = new System.Drawing.Size(656, 23);
-            this.btnOpenFolder.TabIndex = 2;
+            this.btnOpenFolder.TabIndex = 0;
             this.btnOpenFolder.Text = "Open Folder";
             this.btnOpenFolder.UseVisualStyleBackColor = true;
             this.btnOpenFolder.Click += new System.EventHandler(this.btnOpenFolder_Click);
