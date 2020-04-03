@@ -37,6 +37,7 @@
             this.txtDesc = new System.Windows.Forms.TextBox();
             this.btnOpenFolder = new System.Windows.Forms.Button();
             this.picIcon = new System.Windows.Forms.PictureBox();
+            this.lblStatus = new System.Windows.Forms.Label();
             this.pnlTool.SuspendLayout();
             this.pnlDesc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picIcon)).BeginInit();
@@ -92,7 +93,7 @@
             this.lstItems.FormattingEnabled = true;
             this.lstItems.Location = new System.Drawing.Point(0, 20);
             this.lstItems.Name = "lstItems";
-            this.lstItems.Size = new System.Drawing.Size(800, 286);
+            this.lstItems.Size = new System.Drawing.Size(800, 273);
             this.lstItems.TabIndex = 1;
             this.lstItems.SelectedIndexChanged += new System.EventHandler(this.lstItems_SelectedIndexChanged);
             this.lstItems.DoubleClick += new System.EventHandler(this.lstItems_DoubleClick);
@@ -103,7 +104,7 @@
             this.pnlDesc.Controls.Add(this.btnOpenFolder);
             this.pnlDesc.Controls.Add(this.picIcon);
             this.pnlDesc.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlDesc.Location = new System.Drawing.Point(0, 306);
+            this.pnlDesc.Location = new System.Drawing.Point(0, 293);
             this.pnlDesc.Name = "pnlDesc";
             this.pnlDesc.Size = new System.Drawing.Size(800, 144);
             this.pnlDesc.TabIndex = 3;
@@ -138,6 +139,16 @@
             this.picIcon.TabIndex = 0;
             this.picIcon.TabStop = false;
             // 
+            // lblStatus
+            // 
+            this.lblStatus.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lblStatus.Location = new System.Drawing.Point(0, 437);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(800, 13);
+            this.lblStatus.TabIndex = 4;
+            this.lblStatus.Text = "0 items founded.";
+            this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -146,6 +157,7 @@
             this.Controls.Add(this.lstItems);
             this.Controls.Add(this.pnlDesc);
             this.Controls.Add(this.pnlTool);
+            this.Controls.Add(this.lblStatus);
             this.Name = "frmMain";
             this.Text = "TEXT finder";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
@@ -169,6 +181,7 @@
         private System.Windows.Forms.TextBox txtDesc;
         private System.Windows.Forms.Button btnMatchCase;
         private System.Windows.Forms.Button btnOpenFolder;
+        private System.Windows.Forms.Label lblStatus;
     }
 }
 
