@@ -180,6 +180,7 @@
             this.pnlSettings.Name = "pnlSettings";
             this.pnlSettings.Size = new System.Drawing.Size(200, 450);
             this.pnlSettings.TabIndex = 2;
+            this.pnlSettings.Visible = false;
             // 
             // frmMain
             // 
