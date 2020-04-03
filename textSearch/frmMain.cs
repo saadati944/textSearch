@@ -84,6 +84,7 @@ namespace textSearch
                     if (exit)
                     {
                         Invoke(new Action(()=> MessageBox.Show("end")));
+                        Invoke(new Action(() => lblStatus.Text = lstItems.Items.Count.ToString()+" items founded."));
                         return;
                     }
                     tasks+=1;
@@ -97,6 +98,7 @@ namespace textSearch
                 if (exit)
                 {
                     Invoke(new Action(() => MessageBox.Show("end")));
+                    Invoke(new Action(() => lblStatus.Text = lstItems.Items.Count.ToString() + " items founded."));
                     return;
                 }
                 while (tasks > 0)
@@ -106,6 +108,7 @@ namespace textSearch
             this.Invoke(new Action(()=> btnFind.Text = "Find"));
             this.Invoke(new Action(()=> txttext.Enabled = true));
             Invoke(new Action(() => MessageBox.Show("end")));
+            Invoke(new Action(() => lblStatus.Text = lstItems.Items.Count.ToString() + " items founded."));
         }
 
         public void dirExplorer(string dpath,bool root=false)
