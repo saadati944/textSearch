@@ -231,5 +231,11 @@ namespace textSearch
             }
             catch { }
         }
+
+        private void lblChangeSettingsState_Click(object sender, EventArgs e)
+        {
+            pnlSettings.Visible = !pnlSettings.Visible;
+            lblChangeSettingsState.Text =pnlSettings.Visible?">":"<";
+        }
     }
 }

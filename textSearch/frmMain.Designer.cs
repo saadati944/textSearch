@@ -171,6 +171,7 @@
             this.lblChangeSettingsState.TabIndex = 0;
             this.lblChangeSettingsState.Text = "<";
             this.lblChangeSettingsState.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblChangeSettingsState.Click += new System.EventHandler(this.lblChangeSettingsState_Click);
             // 
             // pnlSettings
             // 
