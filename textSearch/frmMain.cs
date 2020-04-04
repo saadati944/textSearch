@@ -13,6 +13,12 @@ namespace textSearch
 {
     public partial class frmMain : Form
     {
+        //to use your own config file set useCFP to true and set your own configfilepath.
+        bool useCFP = false;
+        string configfilepath = "";
+
+
+
         string[] _path;
         string[] _format;
         string[] path;
@@ -29,7 +35,15 @@ namespace textSearch
         {
             InitializeComponent();
 
-            configReader r = new configReader(Application.StartupPath + "\\textsearch.config");
+            configReader r;
+            if (useCFP)
+                r = new configReader(configfilepath);
+            else if (Application.StartupPath.StartsWith("/"))
+                r = new configReader(Application.StartupPath + "/textsearch.config");
+            else
+                r = new configReader(Application.StartupPath + "\\textsearch.config");
+
+            
             r.readFile();
             try
             {
@@ -50,7 +64,7 @@ namespace textSearch
             catch { }
             r.Dispose();
         }
-        
+
         private void btnFind_Click(object sender, EventArgs e)
         {
             txtDesc.Text = "";
@@ -109,11 +123,11 @@ namespace textSearch
                         ended();
                         return;
                     }
-                    tasks+=1;
+                    tasks += 1;
                     try
                     {
                         string tstr = path[j];
-                        Task.Run(new Action(() => dirExplorer(tstr,true)));
+                        Task.Run(new Action(() => dirExplorer(tstr, true)));
                     }
                     catch { tasks -= 1; }
                 }
@@ -126,21 +140,21 @@ namespace textSearch
                     System.Threading.Thread.Sleep(10);
             }
             catch { }
-            this.Invoke(new Action(()=> btnFind.Text = "Find"));
-            this.Invoke(new Action(()=> txttext.Enabled = true));
+            this.Invoke(new Action(() => btnFind.Text = "Find"));
+            this.Invoke(new Action(() => txttext.Enabled = true));
             ended();
         }
 
-        public void dirExplorer(string dpath,bool root=false)
+        public void dirExplorer(string dpath, bool root = false)
         {
-            
+
             try
             {
                 foreach (string x in Directory.GetFiles(dpath))
                 {
                     if (exit)
                     {
-                        if(root)tasks -= 1;
+                        if (root) tasks -= 1;
                         return;
                     }
                     if (checkFile(x))
@@ -154,14 +168,14 @@ namespace textSearch
                 {
                     if (exit)
                     {
-                        if(root)tasks -= 1;
+                        if (root) tasks -= 1;
                         return;
                     }
                     dirExplorer(x);
                 }
             }
             catch { }
-            if(root)tasks -= 1;
+            if (root) tasks -= 1;
         }
 
         public bool checkFile(string p)
@@ -178,7 +192,7 @@ namespace textSearch
                     if (x.Contains(value))
                         return true;
                 }
-                else if(x.ToLower().Contains(value))
+                else if (x.ToLower().Contains(value))
                     return true;
 
             }
@@ -210,7 +224,7 @@ namespace textSearch
                 FileInfo fi = new FileInfo(desc[lstItems.SelectedIndex]);
                 txtDesc.Text = fi.FullName;
                 txtDesc.Text += "\r\n\r\nfile size : " + (fi.Length / 1024).ToString() + " KB";
-                txtDesc.Text += "\r\ncreation time : " + fi.CreationTime.ToLongDateString()+"  -  "+ fi.CreationTime.ToLongTimeString();
+                txtDesc.Text += "\r\ncreation time : " + fi.CreationTime.ToLongDateString() + "  -  " + fi.CreationTime.ToLongTimeString();
                 txtDesc.Text += "\r\nlast write time : " + fi.LastWriteTime.ToLongDateString() + "  -  " + fi.LastWriteTime.ToLongTimeString();
                 txtDesc.Text += "\r\nlast access time : " + fi.LastAccessTime.ToLongDateString() + "  -  " + fi.LastAccessTime.ToLongTimeString();
             }
@@ -247,7 +261,7 @@ namespace textSearch
         {
             try
             {
-                System.Diagnostics.Process.Start(desc[lstItems.SelectedIndex].Substring(0, desc[lstItems.SelectedIndex].Length-Path.GetFileName(desc[lstItems.SelectedIndex]).Length));
+                System.Diagnostics.Process.Start(desc[lstItems.SelectedIndex].Substring(0, desc[lstItems.SelectedIndex].Length - Path.GetFileName(desc[lstItems.SelectedIndex]).Length));
             }
             catch { }
         }
@@ -255,17 +269,17 @@ namespace textSearch
         private void lblChangeSettingsState_Click(object sender, EventArgs e)
         {
             pnlSettings.Visible = !pnlSettings.Visible;
-            lblChangeSettingsState.Text =pnlSettings.Visible?">":"<";
+            lblChangeSettingsState.Text = pnlSettings.Visible ? ">" : "<";
         }
 
         private void frmMain_Resize(object sender, EventArgs e)
         {
-            chkPath.Height = (pnlSettings.Height-46) / 2;
+            chkPath.Height = (pnlSettings.Height - 46) / 2;
         }
 
         private void btnInvertPath_Click(object sender, EventArgs e)
         {
-            for(int i = 0; i < chkPath.Items.Count; i++)
+            for (int i = 0; i < chkPath.Items.Count; i++)
             {
                 chkPath.SetItemChecked(i, !chkPath.GetItemChecked(i));
             }
