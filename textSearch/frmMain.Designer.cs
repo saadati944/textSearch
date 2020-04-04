@@ -194,16 +194,16 @@
             this.chkPath.FormattingEnabled = true;
             this.chkPath.Location = new System.Drawing.Point(0, 0);
             this.chkPath.Name = "chkPath";
-            this.chkPath.Size = new System.Drawing.Size(319, 94);
+            this.chkPath.Size = new System.Drawing.Size(319, 214);
             this.chkPath.TabIndex = 0;
             // 
             // chkFormat
             // 
             this.chkFormat.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chkFormat.FormattingEnabled = true;
-            this.chkFormat.Location = new System.Drawing.Point(0, 94);
+            this.chkFormat.Location = new System.Drawing.Point(0, 214);
             this.chkFormat.Name = "chkFormat";
-            this.chkFormat.Size = new System.Drawing.Size(319, 352);
+            this.chkFormat.Size = new System.Drawing.Size(319, 232);
             this.chkFormat.TabIndex = 1;
             // 
             // frmMain
@@ -220,6 +220,7 @@
             this.Name = "frmMain";
             this.Text = "TEXT finder";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
+            this.Resize += new System.EventHandler(this.frmMain_Resize);
             this.pnlTool.ResumeLayout(false);
             this.pnlTool.PerformLayout();
             this.pnlDesc.ResumeLayout(false);

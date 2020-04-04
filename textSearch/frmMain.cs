@@ -237,5 +237,10 @@ namespace textSearch
             pnlSettings.Visible = !pnlSettings.Visible;
             lblChangeSettingsState.Text =pnlSettings.Visible?">":"<";
         }
+
+        private void frmMain_Resize(object sender, EventArgs e)
+        {
+            chkPath.Height = pnlSettings.Height / 2;
+        }
     }
 }
