@@ -13,6 +13,8 @@ namespace textSearch
 {
     public partial class frmMain : Form
     {
+        string[] _path;
+        string[] _format;
         string[] path;
         string[] format;
         string value;
@@ -31,13 +33,19 @@ namespace textSearch
             r.readFile();
             try
             {
-                path = r.configs["path"].Split('?');
+                _path = r.configs["path"].Split('?');
+                chkPath.Items.AddRange(_path);
+                for (int i = 0; i < _path.Length; i++)
+                    chkPath.SetItemChecked(i, true);
             }
             catch { }
 
             try
             {
-                format = r.configs["format"].Split(',');
+                _format = r.configs["format"].Split(',');
+                chkFormat.Items.AddRange(_format);
+                for (int i = 0; i < _format.Length; i++)
+                    chkFormat.SetItemChecked(i, true);
             }
             catch { }
             r.Dispose();
@@ -48,6 +56,15 @@ namespace textSearch
             txtDesc.Text = "";
             picIcon.Image = null;
             btnOpenFolder.Enabled = false;
+            chkFormat.Enabled = chkPath.Enabled = false;
+
+            path = new string[chkPath.CheckedItems.Count];
+            for (int i = 0; i < path.Length; i++)
+                path[i] = chkPath.CheckedItems[i].ToString();
+
+            format = new string[chkFormat.CheckedItems.Count];
+            for (int i = 0; i < format.Length; i++)
+                format[i] = chkFormat.CheckedItems[i].ToString();
 
             if (btnFind.Text == "Find")
             {
@@ -75,6 +92,12 @@ namespace textSearch
             this.Invoke(new Action(() => lstItems.Items.Add(Path.GetFileName(fpath))));
             desc.Add(fpath);
         }
+        void ended()
+        {
+            Invoke(new Action(() => MessageBox.Show("end")));
+            Invoke(new Action(() => lblStatus.Text = lstItems.Items.Count.ToString() + " items founded."));
+            Invoke(new Action(() => chkFormat.Enabled = chkPath.Enabled = true));
+        }
         void find()
         {
             try
@@ -83,8 +106,7 @@ namespace textSearch
                 {
                     if (exit)
                     {
-                        Invoke(new Action(()=> MessageBox.Show("end")));
-                        Invoke(new Action(() => lblStatus.Text = lstItems.Items.Count.ToString()+" items founded."));
+                        ended();
                         return;
                     }
                     tasks+=1;
@@ -97,8 +119,7 @@ namespace textSearch
                 }
                 if (exit)
                 {
-                    Invoke(new Action(() => MessageBox.Show("end")));
-                    Invoke(new Action(() => lblStatus.Text = lstItems.Items.Count.ToString() + " items founded."));
+                    ended();
                     return;
                 }
                 while (tasks > 0)
@@ -107,8 +128,7 @@ namespace textSearch
             catch { }
             this.Invoke(new Action(()=> btnFind.Text = "Find"));
             this.Invoke(new Action(()=> txttext.Enabled = true));
-            Invoke(new Action(() => MessageBox.Show("end")));
-            Invoke(new Action(() => lblStatus.Text = lstItems.Items.Count.ToString() + " items founded."));
+            ended();
         }
 
         public void dirExplorer(string dpath,bool root=false)
