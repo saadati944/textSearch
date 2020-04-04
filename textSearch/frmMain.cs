@@ -260,7 +260,23 @@ namespace textSearch
 
         private void frmMain_Resize(object sender, EventArgs e)
         {
-            chkPath.Height = pnlSettings.Height / 2;
+            chkPath.Height = (pnlSettings.Height-46) / 2;
+        }
+
+        private void btnInvertPath_Click(object sender, EventArgs e)
+        {
+            for(int i = 0; i < chkPath.Items.Count; i++)
+            {
+                chkPath.SetItemChecked(i, !chkPath.GetItemChecked(i));
+            }
+        }
+
+        private void btnInvertFormat_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < chkFormat.Items.Count; i++)
+            {
+                chkFormat.SetItemChecked(i, !chkFormat.GetItemChecked(i));
+            }
         }
     }
 }
