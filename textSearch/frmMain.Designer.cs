@@ -41,8 +41,10 @@
             this.pnlOpenCloseSettings = new System.Windows.Forms.Panel();
             this.lblChangeSettingsState = new System.Windows.Forms.Label();
             this.pnlSettings = new System.Windows.Forms.Panel();
-            this.chkPath = new System.Windows.Forms.CheckedListBox();
             this.chkFormat = new System.Windows.Forms.CheckedListBox();
+            this.chkPath = new System.Windows.Forms.CheckedListBox();
+            this.btnInvertPath = new System.Windows.Forms.Button();
+            this.btnInvertFormat = new System.Windows.Forms.Button();
             this.pnlTool.SuspendLayout();
             this.pnlDesc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picIcon)).BeginInit();
@@ -180,13 +182,24 @@
             // 
             this.pnlSettings.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlSettings.Controls.Add(this.chkFormat);
+            this.pnlSettings.Controls.Add(this.btnInvertPath);
             this.pnlSettings.Controls.Add(this.chkPath);
+            this.pnlSettings.Controls.Add(this.btnInvertFormat);
             this.pnlSettings.Dock = System.Windows.Forms.DockStyle.Right;
             this.pnlSettings.Location = new System.Drawing.Point(477, 0);
             this.pnlSettings.Name = "pnlSettings";
             this.pnlSettings.Size = new System.Drawing.Size(323, 450);
             this.pnlSettings.TabIndex = 2;
             this.pnlSettings.Visible = false;
+            // 
+            // chkFormat
+            // 
+            this.chkFormat.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chkFormat.FormattingEnabled = true;
+            this.chkFormat.Location = new System.Drawing.Point(0, 237);
+            this.chkFormat.Name = "chkFormat";
+            this.chkFormat.Size = new System.Drawing.Size(319, 186);
+            this.chkFormat.TabIndex = 1;
             // 
             // chkPath
             // 
@@ -197,14 +210,27 @@
             this.chkPath.Size = new System.Drawing.Size(319, 214);
             this.chkPath.TabIndex = 0;
             // 
-            // chkFormat
+            // btnInvertPath
             // 
-            this.chkFormat.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.chkFormat.FormattingEnabled = true;
-            this.chkFormat.Location = new System.Drawing.Point(0, 214);
-            this.chkFormat.Name = "chkFormat";
-            this.chkFormat.Size = new System.Drawing.Size(319, 232);
-            this.chkFormat.TabIndex = 1;
+            this.btnInvertPath.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnInvertPath.Location = new System.Drawing.Point(0, 214);
+            this.btnInvertPath.Name = "btnInvertPath";
+            this.btnInvertPath.Size = new System.Drawing.Size(319, 23);
+            this.btnInvertPath.TabIndex = 2;
+            this.btnInvertPath.Text = "Invert selection";
+            this.btnInvertPath.UseVisualStyleBackColor = true;
+            this.btnInvertPath.Click += new System.EventHandler(this.btnInvertPath_Click);
+            // 
+            // btnInvertFormat
+            // 
+            this.btnInvertFormat.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnInvertFormat.Location = new System.Drawing.Point(0, 423);
+            this.btnInvertFormat.Name = "btnInvertFormat";
+            this.btnInvertFormat.Size = new System.Drawing.Size(319, 23);
+            this.btnInvertFormat.TabIndex = 3;
+            this.btnInvertFormat.Text = "Invert selection";
+            this.btnInvertFormat.UseVisualStyleBackColor = true;
+            this.btnInvertFormat.Click += new System.EventHandler(this.btnInvertFormat_Click);
             // 
             // frmMain
             // 
@@ -249,6 +275,8 @@
         private System.Windows.Forms.Panel pnlSettings;
         private System.Windows.Forms.CheckedListBox chkPath;
         private System.Windows.Forms.CheckedListBox chkFormat;
+        private System.Windows.Forms.Button btnInvertPath;
+        private System.Windows.Forms.Button btnInvertFormat;
     }
 }
 
