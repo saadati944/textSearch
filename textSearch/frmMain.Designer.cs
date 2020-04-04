@@ -196,9 +196,9 @@
             // 
             this.chkFormat.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chkFormat.FormattingEnabled = true;
-            this.chkFormat.Location = new System.Drawing.Point(0, 237);
+            this.chkFormat.Location = new System.Drawing.Point(0, 222);
             this.chkFormat.Name = "chkFormat";
-            this.chkFormat.Size = new System.Drawing.Size(319, 186);
+            this.chkFormat.Size = new System.Drawing.Size(319, 201);
             this.chkFormat.TabIndex = 1;
             // 
             // chkPath
@@ -207,13 +207,13 @@
             this.chkPath.FormattingEnabled = true;
             this.chkPath.Location = new System.Drawing.Point(0, 0);
             this.chkPath.Name = "chkPath";
-            this.chkPath.Size = new System.Drawing.Size(319, 214);
+            this.chkPath.Size = new System.Drawing.Size(319, 199);
             this.chkPath.TabIndex = 0;
             // 
             // btnInvertPath
             // 
             this.btnInvertPath.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnInvertPath.Location = new System.Drawing.Point(0, 214);
+            this.btnInvertPath.Location = new System.Drawing.Point(0, 199);
             this.btnInvertPath.Name = "btnInvertPath";
             this.btnInvertPath.Size = new System.Drawing.Size(319, 23);
             this.btnInvertPath.TabIndex = 2;
