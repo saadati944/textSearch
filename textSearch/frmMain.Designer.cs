@@ -41,16 +41,19 @@
             this.pnlOpenCloseSettings = new System.Windows.Forms.Panel();
             this.lblChangeSettingsState = new System.Windows.Forms.Label();
             this.pnlSettings = new System.Windows.Forms.Panel();
+            this.chkPath = new System.Windows.Forms.CheckedListBox();
+            this.chkFormat = new System.Windows.Forms.CheckedListBox();
             this.pnlTool.SuspendLayout();
             this.pnlDesc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picIcon)).BeginInit();
             this.pnlOpenCloseSettings.SuspendLayout();
+            this.pnlSettings.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnFind
             // 
             this.btnFind.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnFind.Location = new System.Drawing.Point(449, 0);
+            this.btnFind.Location = new System.Drawing.Point(326, 0);
             this.btnFind.Name = "btnFind";
             this.btnFind.Size = new System.Drawing.Size(141, 20);
             this.btnFind.TabIndex = 2;
@@ -66,7 +69,7 @@
             this.pnlTool.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTool.Location = new System.Drawing.Point(0, 0);
             this.pnlTool.Name = "pnlTool";
-            this.pnlTool.Size = new System.Drawing.Size(590, 20);
+            this.pnlTool.Size = new System.Drawing.Size(467, 20);
             this.pnlTool.TabIndex = 0;
             // 
             // txttext
@@ -74,7 +77,7 @@
             this.txttext.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txttext.Location = new System.Drawing.Point(0, 0);
             this.txttext.Name = "txttext";
-            this.txttext.Size = new System.Drawing.Size(374, 20);
+            this.txttext.Size = new System.Drawing.Size(251, 20);
             this.txttext.TabIndex = 0;
             // 
             // btnMatchCase
@@ -83,7 +86,7 @@
             this.btnMatchCase.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnMatchCase.FlatAppearance.BorderSize = 0;
             this.btnMatchCase.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnMatchCase.Location = new System.Drawing.Point(374, 0);
+            this.btnMatchCase.Location = new System.Drawing.Point(251, 0);
             this.btnMatchCase.Name = "btnMatchCase";
             this.btnMatchCase.Size = new System.Drawing.Size(75, 20);
             this.btnMatchCase.TabIndex = 1;
@@ -97,7 +100,7 @@
             this.lstItems.FormattingEnabled = true;
             this.lstItems.Location = new System.Drawing.Point(0, 20);
             this.lstItems.Name = "lstItems";
-            this.lstItems.Size = new System.Drawing.Size(590, 273);
+            this.lstItems.Size = new System.Drawing.Size(467, 273);
             this.lstItems.TabIndex = 1;
             this.lstItems.SelectedIndexChanged += new System.EventHandler(this.lstItems_SelectedIndexChanged);
             this.lstItems.DoubleClick += new System.EventHandler(this.lstItems_DoubleClick);
@@ -110,7 +113,7 @@
             this.pnlDesc.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlDesc.Location = new System.Drawing.Point(0, 293);
             this.pnlDesc.Name = "pnlDesc";
-            this.pnlDesc.Size = new System.Drawing.Size(590, 144);
+            this.pnlDesc.Size = new System.Drawing.Size(467, 144);
             this.pnlDesc.TabIndex = 3;
             // 
             // txtDesc
@@ -119,7 +122,7 @@
             this.txtDesc.Location = new System.Drawing.Point(144, 0);
             this.txtDesc.Multiline = true;
             this.txtDesc.Name = "txtDesc";
-            this.txtDesc.Size = new System.Drawing.Size(446, 121);
+            this.txtDesc.Size = new System.Drawing.Size(323, 121);
             this.txtDesc.TabIndex = 1;
             // 
             // btnOpenFolder
@@ -127,7 +130,7 @@
             this.btnOpenFolder.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnOpenFolder.Location = new System.Drawing.Point(144, 121);
             this.btnOpenFolder.Name = "btnOpenFolder";
-            this.btnOpenFolder.Size = new System.Drawing.Size(446, 23);
+            this.btnOpenFolder.Size = new System.Drawing.Size(323, 23);
             this.btnOpenFolder.TabIndex = 0;
             this.btnOpenFolder.Text = "Open Folder";
             this.btnOpenFolder.UseVisualStyleBackColor = true;
@@ -148,7 +151,7 @@
             this.lblStatus.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lblStatus.Location = new System.Drawing.Point(0, 437);
             this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(590, 13);
+            this.lblStatus.Size = new System.Drawing.Size(467, 13);
             this.lblStatus.TabIndex = 4;
             this.lblStatus.Text = "0 items founded.";
             this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -157,7 +160,7 @@
             // 
             this.pnlOpenCloseSettings.Controls.Add(this.lblChangeSettingsState);
             this.pnlOpenCloseSettings.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlOpenCloseSettings.Location = new System.Drawing.Point(590, 0);
+            this.pnlOpenCloseSettings.Location = new System.Drawing.Point(467, 0);
             this.pnlOpenCloseSettings.Name = "pnlOpenCloseSettings";
             this.pnlOpenCloseSettings.Size = new System.Drawing.Size(10, 450);
             this.pnlOpenCloseSettings.TabIndex = 5;
@@ -175,12 +178,33 @@
             // 
             // pnlSettings
             // 
+            this.pnlSettings.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlSettings.Controls.Add(this.chkFormat);
+            this.pnlSettings.Controls.Add(this.chkPath);
             this.pnlSettings.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlSettings.Location = new System.Drawing.Point(600, 0);
+            this.pnlSettings.Location = new System.Drawing.Point(477, 0);
             this.pnlSettings.Name = "pnlSettings";
-            this.pnlSettings.Size = new System.Drawing.Size(200, 450);
+            this.pnlSettings.Size = new System.Drawing.Size(323, 450);
             this.pnlSettings.TabIndex = 2;
             this.pnlSettings.Visible = false;
+            // 
+            // chkPath
+            // 
+            this.chkPath.Dock = System.Windows.Forms.DockStyle.Top;
+            this.chkPath.FormattingEnabled = true;
+            this.chkPath.Location = new System.Drawing.Point(0, 0);
+            this.chkPath.Name = "chkPath";
+            this.chkPath.Size = new System.Drawing.Size(319, 94);
+            this.chkPath.TabIndex = 0;
+            // 
+            // chkFormat
+            // 
+            this.chkFormat.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chkFormat.FormattingEnabled = true;
+            this.chkFormat.Location = new System.Drawing.Point(0, 94);
+            this.chkFormat.Name = "chkFormat";
+            this.chkFormat.Size = new System.Drawing.Size(319, 352);
+            this.chkFormat.TabIndex = 1;
             // 
             // frmMain
             // 
@@ -202,6 +226,7 @@
             this.pnlDesc.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picIcon)).EndInit();
             this.pnlOpenCloseSettings.ResumeLayout(false);
+            this.pnlSettings.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -221,6 +246,8 @@
         private System.Windows.Forms.Panel pnlOpenCloseSettings;
         private System.Windows.Forms.Label lblChangeSettingsState;
         private System.Windows.Forms.Panel pnlSettings;
+        private System.Windows.Forms.CheckedListBox chkPath;
+        private System.Windows.Forms.CheckedListBox chkFormat;
     }
 }
 
