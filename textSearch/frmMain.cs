@@ -274,7 +274,7 @@ namespace textSearch
 
         private void frmMain_Resize(object sender, EventArgs e)
         {
-            chkPath.Height = (pnlSettings.Height - 46) / 2;
+            chkPath.Height = (pnlSettings.Height - 72) / 2;
         }
 
         private void btnInvertPath_Click(object sender, EventArgs e)

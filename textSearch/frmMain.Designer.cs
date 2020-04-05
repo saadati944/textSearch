@@ -42,9 +42,11 @@
             this.lblChangeSettingsState = new System.Windows.Forms.Label();
             this.pnlSettings = new System.Windows.Forms.Panel();
             this.chkFormat = new System.Windows.Forms.CheckedListBox();
-            this.chkPath = new System.Windows.Forms.CheckedListBox();
             this.btnInvertPath = new System.Windows.Forms.Button();
+            this.chkPath = new System.Windows.Forms.CheckedListBox();
             this.btnInvertFormat = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.pnlTool.SuspendLayout();
             this.pnlDesc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picIcon)).BeginInit();
@@ -182,9 +184,11 @@
             // 
             this.pnlSettings.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlSettings.Controls.Add(this.chkFormat);
+            this.pnlSettings.Controls.Add(this.label2);
             this.pnlSettings.Controls.Add(this.btnInvertPath);
             this.pnlSettings.Controls.Add(this.chkPath);
             this.pnlSettings.Controls.Add(this.btnInvertFormat);
+            this.pnlSettings.Controls.Add(this.label1);
             this.pnlSettings.Dock = System.Windows.Forms.DockStyle.Right;
             this.pnlSettings.Location = new System.Drawing.Point(477, 0);
             this.pnlSettings.Name = "pnlSettings";
@@ -196,30 +200,30 @@
             // 
             this.chkFormat.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chkFormat.FormattingEnabled = true;
-            this.chkFormat.Location = new System.Drawing.Point(0, 222);
+            this.chkFormat.Location = new System.Drawing.Point(0, 233);
             this.chkFormat.Name = "chkFormat";
-            this.chkFormat.Size = new System.Drawing.Size(319, 201);
+            this.chkFormat.Size = new System.Drawing.Size(319, 190);
             this.chkFormat.TabIndex = 1;
-            // 
-            // chkPath
-            // 
-            this.chkPath.Dock = System.Windows.Forms.DockStyle.Top;
-            this.chkPath.FormattingEnabled = true;
-            this.chkPath.Location = new System.Drawing.Point(0, 0);
-            this.chkPath.Name = "chkPath";
-            this.chkPath.Size = new System.Drawing.Size(319, 199);
-            this.chkPath.TabIndex = 0;
             // 
             // btnInvertPath
             // 
             this.btnInvertPath.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnInvertPath.Location = new System.Drawing.Point(0, 199);
+            this.btnInvertPath.Location = new System.Drawing.Point(0, 197);
             this.btnInvertPath.Name = "btnInvertPath";
             this.btnInvertPath.Size = new System.Drawing.Size(319, 23);
             this.btnInvertPath.TabIndex = 2;
             this.btnInvertPath.Text = "Invert selection";
             this.btnInvertPath.UseVisualStyleBackColor = true;
             this.btnInvertPath.Click += new System.EventHandler(this.btnInvertPath_Click);
+            // 
+            // chkPath
+            // 
+            this.chkPath.Dock = System.Windows.Forms.DockStyle.Top;
+            this.chkPath.FormattingEnabled = true;
+            this.chkPath.Location = new System.Drawing.Point(0, 13);
+            this.chkPath.Name = "chkPath";
+            this.chkPath.Size = new System.Drawing.Size(319, 184);
+            this.chkPath.TabIndex = 0;
             // 
             // btnInvertFormat
             // 
@@ -231,6 +235,26 @@
             this.btnInvertFormat.Text = "Invert selection";
             this.btnInvertFormat.UseVisualStyleBackColor = true;
             this.btnInvertFormat.Click += new System.EventHandler(this.btnInvertFormat_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(34, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Paths";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label2.Location = new System.Drawing.Point(0, 220);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(44, 13);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Formats";
             // 
             // frmMain
             // 
@@ -254,6 +278,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picIcon)).EndInit();
             this.pnlOpenCloseSettings.ResumeLayout(false);
             this.pnlSettings.ResumeLayout(false);
+            this.pnlSettings.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -277,6 +302,8 @@
         private System.Windows.Forms.CheckedListBox chkFormat;
         private System.Windows.Forms.Button btnInvertPath;
         private System.Windows.Forms.Button btnInvertFormat;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
 
