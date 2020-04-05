@@ -48,14 +48,14 @@ namespace textSearch
                     {
                         configs.Add("path", "");
                         string v = configs["path"];
-                        v +=  cutSpaces(kandv.Substring(1));
+                        v +=  cutSpaces(kandv.Substring(1)).ToLower();
                         configs.Remove("path");
                         configs.Add("path", v);
                     }
                     else
                     {
                         string v = configs["path"];
-                        v += "?" + cutSpaces(kandv.Substring(1));
+                        v += "?" + cutSpaces(kandv.Substring(1)).ToLower();
                         configs.Remove("path");
                         configs.Add("path", v);
                     }
@@ -67,14 +67,14 @@ namespace textSearch
                     {
                         configs.Add("format", "");
                         string v = configs["format"];
-                        v += cutSpaces(kandv.Substring(1));
+                        v += cutSpaces(kandv.Substring(1)).ToLower();
                         configs.Remove("format");
                         configs.Add("format", v);
                     }
                     else
                     {
                         string v = configs["format"];
-                        v += "," + cutSpaces(kandv.Substring(1));
+                        v += "," + cutSpaces(kandv.Substring(1)).ToLower();
                         configs.Remove("format");
                         configs.Add("format", v);
                     }
@@ -98,10 +98,14 @@ namespace textSearch
                         v = configs[key];
                         configs.Remove(key);
                     }
+                    value = value.ToLower();
                     configs.Add(key, v + value);
                 }
-                else if(!configs.ContainsKey(key))
-                configs.Add(key, value);
+                else if (!configs.ContainsKey(key))
+                {
+                    value = value.ToLower();
+                    configs.Add(key, value);
+                }
             }
             catch { }
         }
