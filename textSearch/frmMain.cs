@@ -71,7 +71,7 @@ namespace textSearch
             txtDesc.Text = "";
             picIcon.Image = null;
             btnOpenFolder.Enabled = false;
-            chkFormat.Enabled = chkPath.Enabled = false;
+            chkFormat.Enabled = chkPath.Enabled =pnlFormatsTool.Enabled=pnlPathsTool.Enabled= false;
 
             path = new string[chkPath.CheckedItems.Count];
             for (int i = 0; i < path.Length; i++)
@@ -111,7 +111,7 @@ namespace textSearch
         {
             Invoke(new Action(() => MessageBox.Show("end")));
             Invoke(new Action(() => lblStatus.Text = lstItems.Items.Count.ToString() + " items founded."));
-            Invoke(new Action(() => chkFormat.Enabled = chkPath.Enabled = true));
+            Invoke(new Action(() => chkFormat.Enabled = chkPath.Enabled=pnlPathsTool.Enabled=pnlFormatsTool.Enabled = true));
         }
         void find()
         {
