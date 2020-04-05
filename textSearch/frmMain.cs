@@ -37,11 +37,12 @@ namespace textSearch
 
             configReader r;
             if (useCFP)
-                r = new configReader(configfilepath);
+                ;
             else if (Application.StartupPath.StartsWith("/"))
-                r = new configReader(Application.StartupPath + "/textsearch.config");
+                configfilepath = Application.StartupPath + "/textsearch.config";
             else
-                r = new configReader(Application.StartupPath + "\\textsearch.config");
+                configfilepath = Application.StartupPath + "\\textsearch.config";
+            r = new configReader(configfilepath);
 
             
             r.readFile();
@@ -290,6 +291,46 @@ namespace textSearch
             for (int i = 0; i < chkFormat.Items.Count; i++)
             {
                 chkFormat.SetItemChecked(i, !chkFormat.GetItemChecked(i));
+            }
+        }
+
+        private void btnPathPlus_Click(object sender, EventArgs e)
+        {
+            frmAdd addf = new frmAdd(true);
+            addf.ShowDialog();
+            
+            if(!_path.Contains(Program.addValue))
+            {
+                try
+                {
+                    System.IO.File.AppendAllText(configfilepath, "\r\n?" + Program.addValue);
+                    chkPath.Items.Add(Program.addValue);
+                }
+                catch { }
+            }
+            else
+            {
+                MessageBox.Show("value already exists.");
+            }
+        }
+
+        private void btnFormatPlus_Click(object sender, EventArgs e)
+        {
+            frmAdd addf = new frmAdd(false);
+            addf.ShowDialog();
+
+            if (!_format.Contains(Program.addValue))
+            {
+                try
+                {
+                    System.IO.File.AppendAllText(configfilepath, "\r\n," + Program.addValue);
+                    chkFormat.Items.Add(Program.addValue);
+                }
+                catch { }
+            }
+            else
+            {
+                MessageBox.Show("value already exists.");
             }
         }
     }

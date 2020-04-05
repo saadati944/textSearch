@@ -291,6 +291,7 @@
             this.btnPathPlus.TabIndex = 3;
             this.btnPathPlus.Text = "+";
             this.btnPathPlus.UseVisualStyleBackColor = true;
+            this.btnPathPlus.Click += new System.EventHandler(this.btnPathPlus_Click);
             // 
             // btnFormatPlus
             // 
@@ -301,6 +302,7 @@
             this.btnFormatPlus.TabIndex = 5;
             this.btnFormatPlus.Text = "+";
             this.btnFormatPlus.UseVisualStyleBackColor = true;
+            this.btnFormatPlus.Click += new System.EventHandler(this.btnFormatPlus_Click);
             // 
             // frmMain
             // 
