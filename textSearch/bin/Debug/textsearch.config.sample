@@ -25,9 +25,10 @@ you can use spaces or tabs to increase your configfiles readability.
 ?/home/<username>/desktop
 
 
-//  --this is important--
+//  --this is important-- Try not to change it
 //normal text formats. 
 ,.txt
+,.md
 ,.cs
 ,.html
 ,.css
