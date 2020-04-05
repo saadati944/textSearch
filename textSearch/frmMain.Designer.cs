@@ -47,11 +47,15 @@
             this.btnInvertFormat = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.pnlFormatsTool = new System.Windows.Forms.Panel();
+            this.pnlPathsTool = new System.Windows.Forms.Panel();
             this.pnlTool.SuspendLayout();
             this.pnlDesc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picIcon)).BeginInit();
             this.pnlOpenCloseSettings.SuspendLayout();
             this.pnlSettings.SuspendLayout();
+            this.pnlFormatsTool.SuspendLayout();
+            this.pnlPathsTool.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnFind
@@ -185,10 +189,10 @@
             this.pnlSettings.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlSettings.Controls.Add(this.chkFormat);
             this.pnlSettings.Controls.Add(this.label2);
-            this.pnlSettings.Controls.Add(this.btnInvertPath);
+            this.pnlSettings.Controls.Add(this.pnlPathsTool);
             this.pnlSettings.Controls.Add(this.chkPath);
-            this.pnlSettings.Controls.Add(this.btnInvertFormat);
             this.pnlSettings.Controls.Add(this.label1);
+            this.pnlSettings.Controls.Add(this.pnlFormatsTool);
             this.pnlSettings.Dock = System.Windows.Forms.DockStyle.Right;
             this.pnlSettings.Location = new System.Drawing.Point(477, 0);
             this.pnlSettings.Name = "pnlSettings";
@@ -207,8 +211,8 @@
             // 
             // btnInvertPath
             // 
-            this.btnInvertPath.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnInvertPath.Location = new System.Drawing.Point(0, 197);
+            this.btnInvertPath.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnInvertPath.Location = new System.Drawing.Point(0, 0);
             this.btnInvertPath.Name = "btnInvertPath";
             this.btnInvertPath.Size = new System.Drawing.Size(319, 23);
             this.btnInvertPath.TabIndex = 2;
@@ -227,8 +231,8 @@
             // 
             // btnInvertFormat
             // 
-            this.btnInvertFormat.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnInvertFormat.Location = new System.Drawing.Point(0, 423);
+            this.btnInvertFormat.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnInvertFormat.Location = new System.Drawing.Point(0, 0);
             this.btnInvertFormat.Name = "btnInvertFormat";
             this.btnInvertFormat.Size = new System.Drawing.Size(319, 23);
             this.btnInvertFormat.TabIndex = 3;
@@ -256,6 +260,24 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Formats";
             // 
+            // pnlFormatsTool
+            // 
+            this.pnlFormatsTool.Controls.Add(this.btnInvertFormat);
+            this.pnlFormatsTool.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlFormatsTool.Location = new System.Drawing.Point(0, 423);
+            this.pnlFormatsTool.Name = "pnlFormatsTool";
+            this.pnlFormatsTool.Size = new System.Drawing.Size(319, 23);
+            this.pnlFormatsTool.TabIndex = 6;
+            // 
+            // pnlPathsTool
+            // 
+            this.pnlPathsTool.Controls.Add(this.btnInvertPath);
+            this.pnlPathsTool.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlPathsTool.Location = new System.Drawing.Point(0, 197);
+            this.pnlPathsTool.Name = "pnlPathsTool";
+            this.pnlPathsTool.Size = new System.Drawing.Size(319, 23);
+            this.pnlPathsTool.TabIndex = 7;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -279,6 +301,8 @@
             this.pnlOpenCloseSettings.ResumeLayout(false);
             this.pnlSettings.ResumeLayout(false);
             this.pnlSettings.PerformLayout();
+            this.pnlFormatsTool.ResumeLayout(false);
+            this.pnlPathsTool.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -304,6 +328,8 @@
         private System.Windows.Forms.Button btnInvertFormat;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel pnlFormatsTool;
+        private System.Windows.Forms.Panel pnlPathsTool;
     }
 }
 
