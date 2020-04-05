@@ -49,6 +49,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pnlFormatsTool = new System.Windows.Forms.Panel();
             this.pnlPathsTool = new System.Windows.Forms.Panel();
+            this.btnPathPlus = new System.Windows.Forms.Button();
+            this.btnFormatPlus = new System.Windows.Forms.Button();
             this.pnlTool.SuspendLayout();
             this.pnlDesc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picIcon)).BeginInit();
@@ -211,10 +213,10 @@
             // 
             // btnInvertPath
             // 
-            this.btnInvertPath.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnInvertPath.Location = new System.Drawing.Point(0, 0);
+            this.btnInvertPath.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnInvertPath.Location = new System.Drawing.Point(23, 0);
             this.btnInvertPath.Name = "btnInvertPath";
-            this.btnInvertPath.Size = new System.Drawing.Size(319, 23);
+            this.btnInvertPath.Size = new System.Drawing.Size(296, 23);
             this.btnInvertPath.TabIndex = 2;
             this.btnInvertPath.Text = "Invert selection";
             this.btnInvertPath.UseVisualStyleBackColor = true;
@@ -231,10 +233,10 @@
             // 
             // btnInvertFormat
             // 
-            this.btnInvertFormat.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnInvertFormat.Location = new System.Drawing.Point(0, 0);
+            this.btnInvertFormat.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnInvertFormat.Location = new System.Drawing.Point(23, 0);
             this.btnInvertFormat.Name = "btnInvertFormat";
-            this.btnInvertFormat.Size = new System.Drawing.Size(319, 23);
+            this.btnInvertFormat.Size = new System.Drawing.Size(296, 23);
             this.btnInvertFormat.TabIndex = 3;
             this.btnInvertFormat.Text = "Invert selection";
             this.btnInvertFormat.UseVisualStyleBackColor = true;
@@ -263,6 +265,7 @@
             // pnlFormatsTool
             // 
             this.pnlFormatsTool.Controls.Add(this.btnInvertFormat);
+            this.pnlFormatsTool.Controls.Add(this.btnFormatPlus);
             this.pnlFormatsTool.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlFormatsTool.Location = new System.Drawing.Point(0, 423);
             this.pnlFormatsTool.Name = "pnlFormatsTool";
@@ -272,11 +275,32 @@
             // pnlPathsTool
             // 
             this.pnlPathsTool.Controls.Add(this.btnInvertPath);
+            this.pnlPathsTool.Controls.Add(this.btnPathPlus);
             this.pnlPathsTool.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlPathsTool.Location = new System.Drawing.Point(0, 197);
             this.pnlPathsTool.Name = "pnlPathsTool";
             this.pnlPathsTool.Size = new System.Drawing.Size(319, 23);
             this.pnlPathsTool.TabIndex = 7;
+            // 
+            // btnPathPlus
+            // 
+            this.btnPathPlus.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnPathPlus.Location = new System.Drawing.Point(0, 0);
+            this.btnPathPlus.Name = "btnPathPlus";
+            this.btnPathPlus.Size = new System.Drawing.Size(23, 23);
+            this.btnPathPlus.TabIndex = 3;
+            this.btnPathPlus.Text = "+";
+            this.btnPathPlus.UseVisualStyleBackColor = true;
+            // 
+            // btnFormatPlus
+            // 
+            this.btnFormatPlus.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnFormatPlus.Location = new System.Drawing.Point(0, 0);
+            this.btnFormatPlus.Name = "btnFormatPlus";
+            this.btnFormatPlus.Size = new System.Drawing.Size(23, 23);
+            this.btnFormatPlus.TabIndex = 5;
+            this.btnFormatPlus.Text = "+";
+            this.btnFormatPlus.UseVisualStyleBackColor = true;
             // 
             // frmMain
             // 
@@ -330,6 +354,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel pnlFormatsTool;
         private System.Windows.Forms.Panel pnlPathsTool;
+        private System.Windows.Forms.Button btnPathPlus;
+        private System.Windows.Forms.Button btnFormatPlus;
     }
 }
 
