@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
+using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -33,7 +33,7 @@ namespace textSearch
                 }
                 if (comment)
                     continue;
-                if (!x.Contains(':'))
+                if (!x.StartsWith("?") && !x.StartsWith(",") && !x.Contains(':'))
                     continue;
                 setVal(x);
             }
@@ -42,6 +42,44 @@ namespace textSearch
         {
             try
             {
+                if (kandv.StartsWith("?"))
+                {
+                    if (!configs.ContainsKey("path"))
+                    {
+                        configs.Add("path", "");
+                        string v = configs["path"];
+                        v +=  cutSpaces(kandv.Substring(1));
+                        configs.Remove("path");
+                        configs.Add("path", v);
+                    }
+                    else
+                    {
+                        string v = configs["path"];
+                        v += "?" + cutSpaces(kandv.Substring(1));
+                        configs.Remove("path");
+                        configs.Add("path", v);
+                    }
+                    return;
+                }
+                else if (kandv.StartsWith(","))
+                {
+                    if (!configs.ContainsKey("format"))
+                    {
+                        configs.Add("format", "");
+                        string v = configs["format"];
+                        v += cutSpaces(kandv.Substring(1));
+                        configs.Remove("format");
+                        configs.Add("format", v);
+                    }
+                    else
+                    {
+                        string v = configs["format"];
+                        v += "," + cutSpaces(kandv.Substring(1));
+                        configs.Remove("format");
+                        configs.Add("format", v);
+                    }
+                    return;
+                }
                 string key = kandv.Substring(0, kandv.IndexOf(':'));
                 string value = kandv.Substring(key.Length+1, kandv.Length - key.Length-1);
 
