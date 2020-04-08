@@ -340,6 +340,7 @@ namespace textSearch
         {
             pnlLog.Visible = !pnlLog.Visible;
             lblChangeLogsState.Text = pnlLog.Visible ? "v" : "^";
+            frmMain_Resize(this, null) ;
         }
         void log(string message)
         {
