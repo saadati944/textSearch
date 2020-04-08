@@ -1,6 +1,7 @@
 #     textSearch
 
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/saadati944/textSearch.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/saadati944/textSearch/alerts/)
+[![Language grade: C#](https://img.shields.io/lgtm/grade/csharp/g/saadati944/textSearch.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/saadati944/textSearch/context:csharp)
 
 
 Tired of browsing your code? Don't worry anymore!!
