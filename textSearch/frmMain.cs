@@ -53,7 +53,7 @@ namespace textSearch
                 for (int i = 0; i < _path.Length; i++)
                     chkPath.SetItemChecked(i, true);
             }
-            catch { }
+            catch (Exception ex){ }
 
             try
             {
@@ -62,7 +62,7 @@ namespace textSearch
                 for (int i = 0; i < _format.Length; i++)
                     chkFormat.SetItemChecked(i, true);
             }
-            catch { }
+            catch (Exception ex) { }
             r.Dispose();
         }
 
@@ -130,7 +130,7 @@ namespace textSearch
                         string tstr = path[j];
                         Task.Run(new Action(() => dirExplorer(tstr, true)));
                     }
-                    catch { tasks -= 1; }
+                    catch  { tasks -= 1; }
                 }
                 if (exit)
                 {
@@ -140,7 +140,7 @@ namespace textSearch
                 while (tasks > 0)
                     System.Threading.Thread.Sleep(10);
             }
-            catch { }
+            catch (Exception ex) { }
             this.Invoke(new Action(() => btnFind.Text = "Find"));
             this.Invoke(new Action(() => txttext.Enabled = true));
             ended();
@@ -175,7 +175,7 @@ namespace textSearch
                     dirExplorer(x);
                 }
             }
-            catch { }
+            catch (Exception ex) { }
             if (root) tasks -= 1;
         }
 
@@ -219,7 +219,7 @@ namespace textSearch
             {
                 picIcon.Image = Icon.ExtractAssociatedIcon(desc[lstItems.SelectedIndex]).ToBitmap();
             }
-            catch { }
+            catch (Exception ex) { }
             try
             {
                 FileInfo fi = new FileInfo(desc[lstItems.SelectedIndex]);
@@ -229,7 +229,7 @@ namespace textSearch
                 txtDesc.Text += "\r\nlast write time : " + fi.LastWriteTime.ToLongDateString() + "  -  " + fi.LastWriteTime.ToLongTimeString();
                 txtDesc.Text += "\r\nlast access time : " + fi.LastAccessTime.ToLongDateString() + "  -  " + fi.LastAccessTime.ToLongTimeString();
             }
-            catch { }
+            catch (Exception ex) { }
         }
 
         private void btnMatchCase_Click(object sender, EventArgs e)
@@ -255,7 +255,7 @@ namespace textSearch
                 if (lstItems.SelectedIndex != -1)
                     System.Diagnostics.Process.Start(desc[lstItems.SelectedIndex]);
             }
-            catch { }
+            catch (Exception ex) { }
         }
 
         private void btnOpenFolder_Click(object sender, EventArgs e)
@@ -264,7 +264,7 @@ namespace textSearch
             {
                 System.Diagnostics.Process.Start(desc[lstItems.SelectedIndex].Substring(0, desc[lstItems.SelectedIndex].Length - Path.GetFileName(desc[lstItems.SelectedIndex]).Length));
             }
-            catch { }
+            catch (Exception ex) { }
         }
 
         private void lblChangeSettingsState_Click(object sender, EventArgs e)
@@ -306,7 +306,7 @@ namespace textSearch
                     System.IO.File.AppendAllText(configfilepath, "\r\n?" + Program.addValue);
                     chkPath.Items.Add(Program.addValue);
                 }
-                catch { }
+                catch (Exception ex) { }
             }
             else
             {
@@ -326,7 +326,7 @@ namespace textSearch
                     System.IO.File.AppendAllText(configfilepath, "\r\n," + Program.addValue);
                     chkFormat.Items.Add(Program.addValue);
                 }
-                catch { }
+                catch (Exception ex) { }
             }
             else
             {
