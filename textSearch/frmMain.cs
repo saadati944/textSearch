@@ -333,5 +333,10 @@ namespace textSearch
                 MessageBox.Show("value already exists.");
             }
         }
+        private void lblChangeLogsState_Click(object sender, EventArgs e)
+        {
+            pnlLog.Visible = !pnlLog.Visible;
+            lblChangeLogsState.Text = pnlLog.Visible ? "v" : "^";
+        }
     }
 }

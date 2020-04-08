@@ -52,7 +52,8 @@
             this.btnInvertFormat = new System.Windows.Forms.Button();
             this.btnFormatPlus = new System.Windows.Forms.Button();
             this.pnlLog = new System.Windows.Forms.Panel();
-            this.lblLog = new System.Windows.Forms.Label();
+            this.lblChangeLogsState = new System.Windows.Forms.Label();
+            this.lstLog = new System.Windows.Forms.ListBox();
             this.pnlTool.SuspendLayout();
             this.pnlDesc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picIcon)).BeginInit();
@@ -60,6 +61,7 @@
             this.pnlSettings.SuspendLayout();
             this.pnlPathsTool.SuspendLayout();
             this.pnlFormatsTool.SuspendLayout();
+            this.pnlLog.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnFind
@@ -308,6 +310,8 @@
             // 
             // pnlLog
             // 
+            this.pnlLog.BackColor = System.Drawing.Color.Black;
+            this.pnlLog.Controls.Add(this.lstLog);
             this.pnlLog.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlLog.Location = new System.Drawing.Point(0, 343);
             this.pnlLog.Name = "pnlLog";
@@ -315,15 +319,29 @@
             this.pnlLog.TabIndex = 2;
             this.pnlLog.Visible = false;
             // 
-            // lblLog
+            // lblChangeLogsState
             // 
-            this.lblLog.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lblLog.Location = new System.Drawing.Point(0, 333);
-            this.lblLog.Name = "lblLog";
-            this.lblLog.Size = new System.Drawing.Size(800, 10);
-            this.lblLog.TabIndex = 6;
-            this.lblLog.Text = "^";
-            this.lblLog.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblChangeLogsState.BackColor = System.Drawing.Color.Black;
+            this.lblChangeLogsState.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lblChangeLogsState.ForeColor = System.Drawing.Color.White;
+            this.lblChangeLogsState.Location = new System.Drawing.Point(0, 333);
+            this.lblChangeLogsState.Name = "lblChangeLogsState";
+            this.lblChangeLogsState.Size = new System.Drawing.Size(800, 10);
+            this.lblChangeLogsState.TabIndex = 6;
+            this.lblChangeLogsState.Text = "^";
+            this.lblChangeLogsState.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblChangeLogsState.Click += new System.EventHandler(this.lblChangeLogsState_Click);
+            // 
+            // lstLog
+            // 
+            this.lstLog.BackColor = System.Drawing.Color.Black;
+            this.lstLog.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lstLog.ForeColor = System.Drawing.Color.White;
+            this.lstLog.FormattingEnabled = true;
+            this.lstLog.Location = new System.Drawing.Point(0, 0);
+            this.lstLog.Name = "lstLog";
+            this.lstLog.Size = new System.Drawing.Size(800, 94);
+            this.lstLog.TabIndex = 2;
             // 
             // frmMain
             // 
@@ -335,7 +353,7 @@
             this.Controls.Add(this.pnlTool);
             this.Controls.Add(this.pnlOpenCloseSettings);
             this.Controls.Add(this.pnlSettings);
-            this.Controls.Add(this.lblLog);
+            this.Controls.Add(this.lblChangeLogsState);
             this.Controls.Add(this.pnlLog);
             this.Controls.Add(this.lblStatus);
             this.Name = "frmMain";
@@ -352,6 +370,7 @@
             this.pnlSettings.PerformLayout();
             this.pnlPathsTool.ResumeLayout(false);
             this.pnlFormatsTool.ResumeLayout(false);
+            this.pnlLog.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -382,7 +401,8 @@
         private System.Windows.Forms.Button btnPathPlus;
         private System.Windows.Forms.Button btnFormatPlus;
         private System.Windows.Forms.Panel pnlLog;
-        private System.Windows.Forms.Label lblLog;
+        private System.Windows.Forms.Label lblChangeLogsState;
+        private System.Windows.Forms.ListBox lstLog;
     }
 }
 
