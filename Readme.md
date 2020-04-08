@@ -1,5 +1,8 @@
 #     textSearch
 
+[![Total alerts](https://img.shields.io/lgtm/alerts/g/saadati944/textSearch.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/saadati944/textSearch/alerts/)
+
+
 Tired of browsing your code? Don't worry anymore!!
 You can now search in your codes with **textSearch** Easy as pie.
 
