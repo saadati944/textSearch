@@ -34,7 +34,10 @@ namespace textSearch
         public frmMain()
         {
             InitializeComponent();
+        }
 
+        private void frmMain_Load(object sender, EventArgs e)
+        {
             configReader r;
             if (useCFP)
                 ;
@@ -44,7 +47,7 @@ namespace textSearch
                 configfilepath = Application.StartupPath + "\\textsearch.config";
             r = new configReader(configfilepath);
 
-            
+
             r.readFile();
             try
             {
@@ -53,7 +56,7 @@ namespace textSearch
                 for (int i = 0; i < _path.Length; i++)
                     chkPath.SetItemChecked(i, true);
             }
-            catch (Exception ex){ log(ex.Message); }
+            catch (Exception ex) { log(ex.Message); }
 
             try
             {
@@ -347,5 +350,7 @@ namespace textSearch
         {
             lstLog.Items.Clear();
         }
+
+        
     }
 }

@@ -360,6 +360,7 @@
             this.Name = "frmMain";
             this.Text = "TEXT finder";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
+            this.Load += new System.EventHandler(this.frmMain_Load);
             this.Resize += new System.EventHandler(this.frmMain_Resize);
             this.pnlTool.ResumeLayout(false);
             this.pnlTool.PerformLayout();
