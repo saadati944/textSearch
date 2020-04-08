@@ -1,5 +1,6 @@
 #     textSearch
 
+[![Build Status](https://img.shields.io/appveyor/ci/saadati944/textSearch/master.svg)](https://ci.appveyor.com/project/saadati944/textSearch)
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/saadati944/textSearch.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/saadati944/textSearch/alerts/)
 [![Language grade: C#](https://img.shields.io/lgtm/grade/csharp/g/saadati944/textSearch.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/saadati944/textSearch/context:csharp)
 
