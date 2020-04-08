@@ -17,6 +17,9 @@ namespace textSearch
         }
         public void readFile()
         {
+            if(!System.IO.File.Exists(_path))
+                try { System.IO.File.Create(_path).Close();}
+                catch { return; }
             bool comment = false;
             foreach (string x in System.IO.File.ReadLines(_path))
             {
