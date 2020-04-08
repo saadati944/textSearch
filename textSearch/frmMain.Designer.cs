@@ -342,6 +342,7 @@
             this.lstLog.Name = "lstLog";
             this.lstLog.Size = new System.Drawing.Size(800, 94);
             this.lstLog.TabIndex = 2;
+            this.lstLog.DoubleClick += new System.EventHandler(this.lstLog_DoubleClick);
             // 
             // frmMain
             // 

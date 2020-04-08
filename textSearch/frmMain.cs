@@ -53,7 +53,7 @@ namespace textSearch
                 for (int i = 0; i < _path.Length; i++)
                     chkPath.SetItemChecked(i, true);
             }
-            catch (Exception ex){ }
+            catch (Exception ex){ log(ex.Message); }
 
             try
             {
@@ -62,7 +62,7 @@ namespace textSearch
                 for (int i = 0; i < _format.Length; i++)
                     chkFormat.SetItemChecked(i, true);
             }
-            catch (Exception ex) { }
+            catch (Exception ex) { log(ex.Message); }
             r.Dispose();
         }
 
@@ -140,7 +140,7 @@ namespace textSearch
                 while (tasks > 0)
                     System.Threading.Thread.Sleep(10);
             }
-            catch (Exception ex) { }
+            catch (Exception ex) { log(ex.Message); }
             this.Invoke(new Action(() => btnFind.Text = "Find"));
             this.Invoke(new Action(() => txttext.Enabled = true));
             ended();
@@ -175,7 +175,7 @@ namespace textSearch
                     dirExplorer(x);
                 }
             }
-            catch (Exception ex) { }
+            catch (Exception ex) { log(ex.Message); }
             if (root) tasks -= 1;
         }
 
@@ -219,7 +219,7 @@ namespace textSearch
             {
                 picIcon.Image = Icon.ExtractAssociatedIcon(desc[lstItems.SelectedIndex]).ToBitmap();
             }
-            catch (Exception ex) { }
+            catch (Exception ex) { log(ex.Message); }
             try
             {
                 FileInfo fi = new FileInfo(desc[lstItems.SelectedIndex]);
@@ -229,7 +229,7 @@ namespace textSearch
                 txtDesc.Text += "\r\nlast write time : " + fi.LastWriteTime.ToLongDateString() + "  -  " + fi.LastWriteTime.ToLongTimeString();
                 txtDesc.Text += "\r\nlast access time : " + fi.LastAccessTime.ToLongDateString() + "  -  " + fi.LastAccessTime.ToLongTimeString();
             }
-            catch (Exception ex) { }
+            catch (Exception ex) { log(ex.Message); }
         }
 
         private void btnMatchCase_Click(object sender, EventArgs e)
@@ -255,7 +255,7 @@ namespace textSearch
                 if (lstItems.SelectedIndex != -1)
                     System.Diagnostics.Process.Start(desc[lstItems.SelectedIndex]);
             }
-            catch (Exception ex) { }
+            catch (Exception ex) { log(ex.Message); }
         }
 
         private void btnOpenFolder_Click(object sender, EventArgs e)
@@ -264,7 +264,7 @@ namespace textSearch
             {
                 System.Diagnostics.Process.Start(desc[lstItems.SelectedIndex].Substring(0, desc[lstItems.SelectedIndex].Length - Path.GetFileName(desc[lstItems.SelectedIndex]).Length));
             }
-            catch (Exception ex) { }
+            catch (Exception ex) { log(ex.Message); }
         }
 
         private void lblChangeSettingsState_Click(object sender, EventArgs e)
@@ -306,7 +306,7 @@ namespace textSearch
                     System.IO.File.AppendAllText(configfilepath, "\r\n?" + Program.addValue);
                     chkPath.Items.Add(Program.addValue);
                 }
-                catch (Exception ex) { }
+                catch (Exception ex) { log(ex.Message); }
             }
             else
             {
@@ -326,7 +326,7 @@ namespace textSearch
                     System.IO.File.AppendAllText(configfilepath, "\r\n," + Program.addValue);
                     chkFormat.Items.Add(Program.addValue);
                 }
-                catch (Exception ex) { }
+                catch (Exception ex) { log(ex.Message); }
             }
             else
             {
@@ -337,6 +337,15 @@ namespace textSearch
         {
             pnlLog.Visible = !pnlLog.Visible;
             lblChangeLogsState.Text = pnlLog.Visible ? "v" : "^";
+        }
+        void log(string message)
+        {
+            Invoke(new Action(() => lstLog.Items.Add(message)));
+        }
+
+        private void lstLog_DoubleClick(object sender, EventArgs e)
+        {
+            lstLog.Items.Clear();
         }
     }
 }
