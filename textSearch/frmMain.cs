@@ -307,6 +307,10 @@ namespace textSearch
                 try
                 {
                     System.IO.File.AppendAllText(configfilepath, "\r\n?" + Program.addValue);
+                }
+                catch (Exception ex) { log(ex.Message); }
+                try
+                {
                     chkPath.Items.Add(Program.addValue);
                 }
                 catch (Exception ex) { log(ex.Message); }
@@ -327,6 +331,10 @@ namespace textSearch
                 try
                 {
                     System.IO.File.AppendAllText(configfilepath, "\r\n," + Program.addValue);
+                }
+                catch (Exception ex) { log(ex.Message); }
+                try
+                {
                     chkFormat.Items.Add(Program.addValue);
                 }
                 catch (Exception ex) { log(ex.Message); }

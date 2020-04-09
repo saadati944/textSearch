@@ -52,8 +52,8 @@
             this.btnInvertFormat = new System.Windows.Forms.Button();
             this.btnFormatPlus = new System.Windows.Forms.Button();
             this.pnlLog = new System.Windows.Forms.Panel();
-            this.lblChangeLogsState = new System.Windows.Forms.Label();
             this.lstLog = new System.Windows.Forms.ListBox();
+            this.lblChangeLogsState = new System.Windows.Forms.Label();
             this.pnlTool.SuspendLayout();
             this.pnlDesc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picIcon)).BeginInit();
@@ -319,6 +319,18 @@
             this.pnlLog.TabIndex = 2;
             this.pnlLog.Visible = false;
             // 
+            // lstLog
+            // 
+            this.lstLog.BackColor = System.Drawing.Color.Black;
+            this.lstLog.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lstLog.ForeColor = System.Drawing.Color.White;
+            this.lstLog.FormattingEnabled = true;
+            this.lstLog.Location = new System.Drawing.Point(0, 0);
+            this.lstLog.Name = "lstLog";
+            this.lstLog.Size = new System.Drawing.Size(800, 94);
+            this.lstLog.TabIndex = 2;
+            this.lstLog.DoubleClick += new System.EventHandler(this.lstLog_DoubleClick);
+            // 
             // lblChangeLogsState
             // 
             this.lblChangeLogsState.BackColor = System.Drawing.Color.Black;
@@ -331,18 +343,6 @@
             this.lblChangeLogsState.Text = "^";
             this.lblChangeLogsState.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblChangeLogsState.Click += new System.EventHandler(this.lblChangeLogsState_Click);
-            // 
-            // lstLog
-            // 
-            this.lstLog.BackColor = System.Drawing.Color.Black;
-            this.lstLog.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lstLog.ForeColor = System.Drawing.Color.White;
-            this.lstLog.FormattingEnabled = true;
-            this.lstLog.Location = new System.Drawing.Point(0, 0);
-            this.lstLog.Name = "lstLog";
-            this.lstLog.Size = new System.Drawing.Size(800, 94);
-            this.lstLog.TabIndex = 2;
-            this.lstLog.DoubleClick += new System.EventHandler(this.lstLog_DoubleClick);
             // 
             // frmMain
             // 
