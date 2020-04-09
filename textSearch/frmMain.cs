@@ -74,7 +74,7 @@ namespace textSearch
             txtDesc.Text = "";
             picIcon.Image = null;
             btnOpenFolder.Enabled = false;
-            chkFormat.Enabled = chkPath.Enabled =pnlFormatsTool.Enabled=pnlPathsTool.Enabled= false;
+            chkFormat.Enabled = chkPath.Enabled = pnlFormatsTool.Enabled = pnlPathsTool.Enabled = false;
 
             path = new string[chkPath.CheckedItems.Count];
             for (int i = 0; i < path.Length; i++)
@@ -114,7 +114,7 @@ namespace textSearch
         {
             Invoke(new Action(() => MessageBox.Show("end")));
             Invoke(new Action(() => lblStatus.Text = lstItems.Items.Count.ToString() + " items founded."));
-            Invoke(new Action(() => chkFormat.Enabled = chkPath.Enabled=pnlPathsTool.Enabled=pnlFormatsTool.Enabled = true));
+            Invoke(new Action(() => chkFormat.Enabled = chkPath.Enabled = pnlPathsTool.Enabled = pnlFormatsTool.Enabled = true));
         }
         void find()
         {
@@ -133,7 +133,7 @@ namespace textSearch
                         string tstr = path[j];
                         Task.Run(new Action(() => dirExplorer(tstr, true)));
                     }
-                    catch  { tasks -= 1; }
+                    catch { tasks -= 1; }
                 }
                 if (exit)
                 {
@@ -302,8 +302,8 @@ namespace textSearch
         {
             frmAdd addf = new frmAdd(true);
             addf.ShowDialog();
-            
-            if(!_path.Contains(Program.addValue))
+
+            if (_path != null && !_path.Contains(Program.addValue))
             {
                 try
                 {
@@ -327,7 +327,7 @@ namespace textSearch
             frmAdd addf = new frmAdd(false);
             addf.ShowDialog();
 
-            if (!_format.Contains(Program.addValue))
+            if (_format != null && !_format.Contains(Program.addValue))
             {
                 try
                 {
@@ -349,7 +349,7 @@ namespace textSearch
         {
             pnlLog.Visible = !pnlLog.Visible;
             lblChangeLogsState.Text = pnlLog.Visible ? "v" : "^";
-            frmMain_Resize(this, null) ;
+            frmMain_Resize(this, null);
         }
         void log(string message)
         {
@@ -361,6 +361,6 @@ namespace textSearch
             lstLog.Items.Clear();
         }
 
-        
+
     }
 }
