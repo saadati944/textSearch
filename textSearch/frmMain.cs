@@ -274,6 +274,7 @@ namespace textSearch
         {
             pnlSettings.Visible = !pnlSettings.Visible;
             lblChangeSettingsState.Text = pnlSettings.Visible ? ">" : "<";
+            frmMain_Resize(null, null);
         }
 
         private void frmMain_Resize(object sender, EventArgs e)
