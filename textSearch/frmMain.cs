@@ -316,6 +316,19 @@ namespace textSearch
                 }
                 catch (Exception ex) { log(ex.Message); }
             }
+            else if (_path ==null)
+            {
+                try
+                {
+                    System.IO.File.AppendAllText(configfilepath, "\r\n?" + Program.addValue);
+                }
+                catch (Exception ex) { log(ex.Message); }
+                try
+                {
+                    chkPath.Items.Add(Program.addValue);
+                }
+                catch (Exception ex) { log(ex.Message); }
+            }
             else
             {
                 MessageBox.Show("value already exists.");
@@ -328,6 +341,19 @@ namespace textSearch
             addf.ShowDialog();
 
             if (_format != null && !_format.Contains(Program.addValue))
+            {
+                try
+                {
+                    System.IO.File.AppendAllText(configfilepath, "\r\n," + Program.addValue);
+                }
+                catch (Exception ex) { log(ex.Message); }
+                try
+                {
+                    chkFormat.Items.Add(Program.addValue);
+                }
+                catch (Exception ex) { log(ex.Message); }
+            }
+            else if (_format ==null)
             {
                 try
                 {
