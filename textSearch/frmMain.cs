@@ -386,6 +386,17 @@ namespace textSearch
         {
             lstLog.Items.Clear();
         }
+
+        private void btnPathMinus_Click(object sender, EventArgs e)
+        {
+            removeConfig(chkPath.SelectedItem.ToString());
+        }
+
+        private void btnFormatMinus_Click(object sender, EventArgs e)
+        {
+            removeConfig(chkFormat.SelectedItem.ToString());
+        }
+
         void removeConfig(string value)
         {
             if (value.StartsWith("."))
@@ -393,6 +404,7 @@ namespace textSearch
                 try
                 {
                     string[] v = System.IO.File.ReadAllLines(configfilepath);
+                    System.IO.File.Delete(configfilepath);
                     System.IO.StreamWriter sr = new StreamWriter(configfilepath);
                     for (int i = 0; i < v.Length; i++)
                     {
@@ -405,6 +417,7 @@ namespace textSearch
                             continue;
                         sr.WriteLine(v[i]);
                     }
+                    sr.Close();
                 }
                 catch (Exception ex) { log(ex.Message); }
             }
@@ -413,6 +426,7 @@ namespace textSearch
                 try
                 {
                     string[] v = System.IO.File.ReadAllLines(configfilepath);
+                    System.IO.File.Delete(configfilepath);
                     System.IO.StreamWriter sr = new StreamWriter(configfilepath);
                     for (int i = 0; i < v.Length; i++)
                     {
@@ -425,6 +439,7 @@ namespace textSearch
                             continue;
                         sr.WriteLine(v[i]);
                     }
+                    sr.Close();
                 }
                 catch (Exception ex) { log(ex.Message); }
             }

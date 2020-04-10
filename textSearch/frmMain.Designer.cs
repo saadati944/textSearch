@@ -54,6 +54,8 @@
             this.pnlLog = new System.Windows.Forms.Panel();
             this.lstLog = new System.Windows.Forms.ListBox();
             this.lblChangeLogsState = new System.Windows.Forms.Label();
+            this.btnPathMinus = new System.Windows.Forms.Button();
+            this.btnFormatMinus = new System.Windows.Forms.Button();
             this.pnlTool.SuspendLayout();
             this.pnlDesc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picIcon)).BeginInit();
@@ -229,6 +231,7 @@
             // 
             this.pnlPathsTool.Controls.Add(this.btnInvertPath);
             this.pnlPathsTool.Controls.Add(this.btnPathPlus);
+            this.pnlPathsTool.Controls.Add(this.btnPathMinus);
             this.pnlPathsTool.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlPathsTool.Location = new System.Drawing.Point(0, 197);
             this.pnlPathsTool.Name = "pnlPathsTool";
@@ -238,9 +241,9 @@
             // btnInvertPath
             // 
             this.btnInvertPath.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnInvertPath.Location = new System.Drawing.Point(23, 0);
+            this.btnInvertPath.Location = new System.Drawing.Point(46, 0);
             this.btnInvertPath.Name = "btnInvertPath";
-            this.btnInvertPath.Size = new System.Drawing.Size(296, 23);
+            this.btnInvertPath.Size = new System.Drawing.Size(273, 23);
             this.btnInvertPath.TabIndex = 2;
             this.btnInvertPath.Text = "Invert selection";
             this.btnInvertPath.UseVisualStyleBackColor = true;
@@ -249,7 +252,7 @@
             // btnPathPlus
             // 
             this.btnPathPlus.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnPathPlus.Location = new System.Drawing.Point(0, 0);
+            this.btnPathPlus.Location = new System.Drawing.Point(23, 0);
             this.btnPathPlus.Name = "btnPathPlus";
             this.btnPathPlus.Size = new System.Drawing.Size(23, 23);
             this.btnPathPlus.TabIndex = 3;
@@ -280,6 +283,7 @@
             // 
             this.pnlFormatsTool.Controls.Add(this.btnInvertFormat);
             this.pnlFormatsTool.Controls.Add(this.btnFormatPlus);
+            this.pnlFormatsTool.Controls.Add(this.btnFormatMinus);
             this.pnlFormatsTool.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlFormatsTool.Location = new System.Drawing.Point(0, 306);
             this.pnlFormatsTool.Name = "pnlFormatsTool";
@@ -289,9 +293,9 @@
             // btnInvertFormat
             // 
             this.btnInvertFormat.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnInvertFormat.Location = new System.Drawing.Point(23, 0);
+            this.btnInvertFormat.Location = new System.Drawing.Point(46, 0);
             this.btnInvertFormat.Name = "btnInvertFormat";
-            this.btnInvertFormat.Size = new System.Drawing.Size(296, 23);
+            this.btnInvertFormat.Size = new System.Drawing.Size(273, 23);
             this.btnInvertFormat.TabIndex = 3;
             this.btnInvertFormat.Text = "Invert selection";
             this.btnInvertFormat.UseVisualStyleBackColor = true;
@@ -300,7 +304,7 @@
             // btnFormatPlus
             // 
             this.btnFormatPlus.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnFormatPlus.Location = new System.Drawing.Point(0, 0);
+            this.btnFormatPlus.Location = new System.Drawing.Point(23, 0);
             this.btnFormatPlus.Name = "btnFormatPlus";
             this.btnFormatPlus.Size = new System.Drawing.Size(23, 23);
             this.btnFormatPlus.TabIndex = 5;
@@ -343,6 +347,28 @@
             this.lblChangeLogsState.Text = "^";
             this.lblChangeLogsState.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblChangeLogsState.Click += new System.EventHandler(this.lblChangeLogsState_Click);
+            // 
+            // btnPathMinus
+            // 
+            this.btnPathMinus.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnPathMinus.Location = new System.Drawing.Point(0, 0);
+            this.btnPathMinus.Name = "btnPathMinus";
+            this.btnPathMinus.Size = new System.Drawing.Size(23, 23);
+            this.btnPathMinus.TabIndex = 4;
+            this.btnPathMinus.Text = "-";
+            this.btnPathMinus.UseVisualStyleBackColor = true;
+            this.btnPathMinus.Click += new System.EventHandler(this.btnPathMinus_Click);
+            // 
+            // btnFormatMinus
+            // 
+            this.btnFormatMinus.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnFormatMinus.Location = new System.Drawing.Point(0, 0);
+            this.btnFormatMinus.Name = "btnFormatMinus";
+            this.btnFormatMinus.Size = new System.Drawing.Size(23, 23);
+            this.btnFormatMinus.TabIndex = 6;
+            this.btnFormatMinus.Text = "-";
+            this.btnFormatMinus.UseVisualStyleBackColor = true;
+            this.btnFormatMinus.Click += new System.EventHandler(this.btnFormatMinus_Click);
             // 
             // frmMain
             // 
@@ -405,6 +431,8 @@
         private System.Windows.Forms.Panel pnlLog;
         private System.Windows.Forms.Label lblChangeLogsState;
         private System.Windows.Forms.ListBox lstLog;
+        private System.Windows.Forms.Button btnPathMinus;
+        private System.Windows.Forms.Button btnFormatMinus;
     }
 }
 
