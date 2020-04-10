@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.btnFind = new System.Windows.Forms.Button();
             this.pnlTool = new System.Windows.Forms.Panel();
             this.txttext = new System.Windows.Forms.TextBox();
@@ -46,16 +47,16 @@
             this.pnlPathsTool = new System.Windows.Forms.Panel();
             this.btnInvertPath = new System.Windows.Forms.Button();
             this.btnPathPlus = new System.Windows.Forms.Button();
+            this.btnPathMinus = new System.Windows.Forms.Button();
             this.chkPath = new System.Windows.Forms.CheckedListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlFormatsTool = new System.Windows.Forms.Panel();
             this.btnInvertFormat = new System.Windows.Forms.Button();
             this.btnFormatPlus = new System.Windows.Forms.Button();
+            this.btnFormatMinus = new System.Windows.Forms.Button();
             this.pnlLog = new System.Windows.Forms.Panel();
             this.lstLog = new System.Windows.Forms.ListBox();
             this.lblChangeLogsState = new System.Windows.Forms.Label();
-            this.btnPathMinus = new System.Windows.Forms.Button();
-            this.btnFormatMinus = new System.Windows.Forms.Button();
             this.pnlTool.SuspendLayout();
             this.pnlDesc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picIcon)).BeginInit();
@@ -260,6 +261,17 @@
             this.btnPathPlus.UseVisualStyleBackColor = true;
             this.btnPathPlus.Click += new System.EventHandler(this.btnPathPlus_Click);
             // 
+            // btnPathMinus
+            // 
+            this.btnPathMinus.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnPathMinus.Location = new System.Drawing.Point(0, 0);
+            this.btnPathMinus.Name = "btnPathMinus";
+            this.btnPathMinus.Size = new System.Drawing.Size(23, 23);
+            this.btnPathMinus.TabIndex = 4;
+            this.btnPathMinus.Text = "-";
+            this.btnPathMinus.UseVisualStyleBackColor = true;
+            this.btnPathMinus.Click += new System.EventHandler(this.btnPathMinus_Click);
+            // 
             // chkPath
             // 
             this.chkPath.Dock = System.Windows.Forms.DockStyle.Top;
@@ -312,6 +324,17 @@
             this.btnFormatPlus.UseVisualStyleBackColor = true;
             this.btnFormatPlus.Click += new System.EventHandler(this.btnFormatPlus_Click);
             // 
+            // btnFormatMinus
+            // 
+            this.btnFormatMinus.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnFormatMinus.Location = new System.Drawing.Point(0, 0);
+            this.btnFormatMinus.Name = "btnFormatMinus";
+            this.btnFormatMinus.Size = new System.Drawing.Size(23, 23);
+            this.btnFormatMinus.TabIndex = 6;
+            this.btnFormatMinus.Text = "-";
+            this.btnFormatMinus.UseVisualStyleBackColor = true;
+            this.btnFormatMinus.Click += new System.EventHandler(this.btnFormatMinus_Click);
+            // 
             // pnlLog
             // 
             this.pnlLog.BackColor = System.Drawing.Color.Black;
@@ -348,28 +371,6 @@
             this.lblChangeLogsState.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblChangeLogsState.Click += new System.EventHandler(this.lblChangeLogsState_Click);
             // 
-            // btnPathMinus
-            // 
-            this.btnPathMinus.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnPathMinus.Location = new System.Drawing.Point(0, 0);
-            this.btnPathMinus.Name = "btnPathMinus";
-            this.btnPathMinus.Size = new System.Drawing.Size(23, 23);
-            this.btnPathMinus.TabIndex = 4;
-            this.btnPathMinus.Text = "-";
-            this.btnPathMinus.UseVisualStyleBackColor = true;
-            this.btnPathMinus.Click += new System.EventHandler(this.btnPathMinus_Click);
-            // 
-            // btnFormatMinus
-            // 
-            this.btnFormatMinus.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnFormatMinus.Location = new System.Drawing.Point(0, 0);
-            this.btnFormatMinus.Name = "btnFormatMinus";
-            this.btnFormatMinus.Size = new System.Drawing.Size(23, 23);
-            this.btnFormatMinus.TabIndex = 6;
-            this.btnFormatMinus.Text = "-";
-            this.btnFormatMinus.UseVisualStyleBackColor = true;
-            this.btnFormatMinus.Click += new System.EventHandler(this.btnFormatMinus_Click);
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -383,6 +384,7 @@
             this.Controls.Add(this.lblChangeLogsState);
             this.Controls.Add(this.pnlLog);
             this.Controls.Add(this.lblStatus);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmMain";
             this.Text = "TEXT finder";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
