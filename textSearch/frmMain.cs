@@ -316,7 +316,7 @@ namespace textSearch
                 }
                 catch (Exception ex) { log(ex.Message); }
             }
-            else if (_path ==null)
+            else if (_path == null)
             {
                 try
                 {
@@ -353,7 +353,7 @@ namespace textSearch
                 }
                 catch (Exception ex) { log(ex.Message); }
             }
-            else if (_format ==null)
+            else if (_format == null)
             {
                 try
                 {
@@ -386,6 +386,48 @@ namespace textSearch
         {
             lstLog.Items.Clear();
         }
-
+        void removeConfig(string value)
+        {
+            if (value.StartsWith("."))
+            {
+                try
+                {
+                    string[] v = System.IO.File.ReadAllLines(configfilepath);
+                    System.IO.StreamWriter sr = new StreamWriter(configfilepath);
+                    for (int i = 0; i < v.Length; i++)
+                    {
+                        bool comment = false;
+                        if (v[i].StartsWith("/*"))
+                            comment = true;
+                        else if (v[i].EndsWith("*/"))
+                            comment = false;
+                        else if (!comment && v[i].StartsWith(",") && Program.cutSpaces(v[i].Substring(1)) == value)
+                            continue;
+                        sr.WriteLine(v[i]);
+                    }
+                }
+                catch (Exception ex) { log(ex.Message); }
+            }
+            else
+            {
+                try
+                {
+                    string[] v = System.IO.File.ReadAllLines(configfilepath);
+                    System.IO.StreamWriter sr = new StreamWriter(configfilepath);
+                    for (int i = 0; i < v.Length; i++)
+                    {
+                        bool comment = false;
+                        if (v[i].StartsWith("/*"))
+                            comment = true;
+                        else if (v[i].EndsWith("*/"))
+                            comment = false;
+                        else if (!comment&&v[i].StartsWith("?") && Program.cutSpaces(v[i].Substring(1)) == value)
+                            continue;
+                        sr.WriteLine(v[i]);
+                    }
+                }
+                catch (Exception ex) { log(ex.Message); }
+            }
+        }
     }
 }
