@@ -387,6 +387,5 @@ namespace textSearch
             lstLog.Items.Clear();
         }
 
-
     }
 }
