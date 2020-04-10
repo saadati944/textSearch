@@ -389,12 +389,14 @@ namespace textSearch
 
         private void btnPathMinus_Click(object sender, EventArgs e)
         {
-            removeConfig(chkPath.SelectedItem.ToString());
+            if (chkPath.SelectedIndex != -1)
+                removeConfig(chkPath.SelectedItem.ToString());
         }
 
         private void btnFormatMinus_Click(object sender, EventArgs e)
         {
-            removeConfig(chkFormat.SelectedItem.ToString());
+            if (chkFormat.SelectedIndex != -1)
+                removeConfig(chkFormat.SelectedItem.ToString());
         }
 
         void removeConfig(string value)
@@ -418,6 +420,7 @@ namespace textSearch
                         sr.WriteLine(v[i]);
                     }
                     sr.Close();
+                    chkFormat.Items.RemoveAt(chkFormat.SelectedIndex);
                 }
                 catch (Exception ex) { log(ex.Message); }
             }
@@ -435,11 +438,12 @@ namespace textSearch
                             comment = true;
                         else if (v[i].EndsWith("*/"))
                             comment = false;
-                        else if (!comment&&v[i].StartsWith("?") && Program.cutSpaces(v[i].Substring(1)) == value)
+                        else if (!comment && v[i].StartsWith("?") && Program.cutSpaces(v[i].Substring(1)) == value)
                             continue;
                         sr.WriteLine(v[i]);
                     }
                     sr.Close();
+                    chkPath.Items.RemoveAt(chkPath.SelectedIndex);
                 }
                 catch (Exception ex) { log(ex.Message); }
             }
