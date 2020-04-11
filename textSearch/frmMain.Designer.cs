@@ -121,6 +121,7 @@
             this.lstItems.TabIndex = 1;
             this.lstItems.SelectedIndexChanged += new System.EventHandler(this.lstItems_SelectedIndexChanged);
             this.lstItems.DoubleClick += new System.EventHandler(this.lstItems_DoubleClick);
+            this.lstItems.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lstItems_KeyDown);
             // 
             // pnlDesc
             // 

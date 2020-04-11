@@ -448,5 +448,11 @@ namespace textSearch
                 catch (Exception ex) { log(ex.Message); }
             }
         }
+
+        private void lstItems_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == 13 && lstItems.SelectedIndex != -1)
+                lstItems_DoubleClick(null, null);
+        }
     }
 }
