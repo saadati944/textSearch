@@ -11,9 +11,11 @@ namespace textSearch
         public string _path;
         public Dictionary<string, string> configs = new Dictionary<string, string>();
 
-        public configReader(string filepath)
+        public configReader(/*string filepath*/)
         {
-            _path = filepath;
+            //_path = filepath;
+            _path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\text.search.config.file.config";
+
         }
         public void readFile()
         {
