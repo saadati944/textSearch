@@ -13,9 +13,6 @@ namespace textSearch
 {
     public partial class frmMain : Form
     {
-        //to use your own config file set useCFP to true and set your own configfilepath.
-        bool useCFP = false;
-        string configfilepath = "";
 
 
 
@@ -38,14 +35,7 @@ namespace textSearch
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            configReader r;
-            if (useCFP)
-                ;
-            else if (Application.StartupPath.StartsWith("/"))
-                configfilepath=Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "/text.search.config.file.config";
-            else
-                configfilepath=Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\text.search.config.file.config";
-            r = new configReader(/*configfilepath*/);
+            configReader r = new configReader(/*Program.getConfigpath()*/);
 
 
             r.readFile();
@@ -307,7 +297,7 @@ namespace textSearch
             {
                 try
                 {
-                    System.IO.File.AppendAllText(configfilepath, "\r\n?" + Program.addValue);
+                    System.IO.File.AppendAllText(Program.getConfigpath(), "\r\n?" + Program.addValue);
                 }
                 catch (Exception ex) { log(ex.Message); }
                 try
@@ -320,7 +310,7 @@ namespace textSearch
             {
                 try
                 {
-                    System.IO.File.AppendAllText(configfilepath, "\r\n?" + Program.addValue);
+                    System.IO.File.AppendAllText(Program.getConfigpath(), "\r\n?" + Program.addValue);
                 }
                 catch (Exception ex) { log(ex.Message); }
                 try
@@ -344,7 +334,7 @@ namespace textSearch
             {
                 try
                 {
-                    System.IO.File.AppendAllText(configfilepath, "\r\n," + Program.addValue);
+                    System.IO.File.AppendAllText(Program.getConfigpath(), "\r\n," + Program.addValue);
                 }
                 catch (Exception ex) { log(ex.Message); }
                 try
@@ -357,7 +347,7 @@ namespace textSearch
             {
                 try
                 {
-                    System.IO.File.AppendAllText(configfilepath, "\r\n," + Program.addValue);
+                    System.IO.File.AppendAllText(Program.getConfigpath(), "\r\n," + Program.addValue);
                 }
                 catch (Exception ex) { log(ex.Message); }
                 try
@@ -405,9 +395,9 @@ namespace textSearch
             {
                 try
                 {
-                    string[] v = System.IO.File.ReadAllLines(configfilepath);
-                    System.IO.File.Delete(configfilepath);
-                    System.IO.StreamWriter sr = new StreamWriter(configfilepath);
+                    string[] v = System.IO.File.ReadAllLines(Program.getConfigpath());
+                    System.IO.File.Delete(Program.getConfigpath());
+                    System.IO.StreamWriter sr = new StreamWriter(Program.getConfigpath());
                     for (int i = 0; i < v.Length; i++)
                     {
                         bool comment = false;
@@ -428,9 +418,9 @@ namespace textSearch
             {
                 try
                 {
-                    string[] v = System.IO.File.ReadAllLines(configfilepath);
-                    System.IO.File.Delete(configfilepath);
-                    System.IO.StreamWriter sr = new StreamWriter(configfilepath);
+                    string[] v = System.IO.File.ReadAllLines(Program.getConfigpath());
+                    System.IO.File.Delete(Program.getConfigpath());
+                    System.IO.StreamWriter sr = new StreamWriter(Program.getConfigpath());
                     for (int i = 0; i < v.Length; i++)
                     {
                         bool comment = false;

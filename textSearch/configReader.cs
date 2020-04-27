@@ -14,7 +14,7 @@ namespace textSearch
         public configReader(/*string filepath*/)
         {
             //_path = filepath;
-            _path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\text.search.config.file.config";
+            _path = Program.getConfigpath();
             if (!System.IO.File.Exists(_path))
             {
                 using (System.IO.StreamWriter writer = System.IO.File.CreateText(_path))
