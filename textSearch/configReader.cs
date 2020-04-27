@@ -15,7 +15,13 @@ namespace textSearch
         {
             //_path = filepath;
             _path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\text.search.config.file.config";
-
+            if (!System.IO.File.Exists(_path))
+            {
+                using (System.IO.StreamWriter writer = System.IO.File.CreateText(_path))
+                {
+                    writer.Write(",.txt\n,.html\n,.css\n,.config\n,.xml\n,.jar\n,.ini\n,.conf\n,.cfg\n,.h\n,.py\n,.htm\n,.sln\n,.csproj\n,.gitattributes\n,.gitignore\n,.pyproj\n,.php\n,.ino\n,.md\n,.cs");
+                }
+            }
         }
         public void readFile()
         {

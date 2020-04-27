@@ -42,10 +42,10 @@ namespace textSearch
             if (useCFP)
                 ;
             else if (Application.StartupPath.StartsWith("/"))
-                configfilepath = Application.StartupPath + "/textsearch.config";
+                configfilepath=Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "/text.search.config.file.config";
             else
-                configfilepath = Application.StartupPath + "\\textsearch.config";
-            r = new configReader(configfilepath);
+                configfilepath=Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\text.search.config.file.config";
+            r = new configReader(/*configfilepath*/);
 
 
             r.readFile();
